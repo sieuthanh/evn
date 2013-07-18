@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="reportsBuffer" type="com.form.evn.reportBuffer.FReportBuffer"/>
+    <form-bean name="functionEvn" type="com.form.admin.FFunction"/>
+    <form-bean name="searchEvn" type="com.form.admin.FFunction"/>
+    <form-bean name="operationEvn" type="com.form.admin.FFunction"/>
+    <form-bean name="searchTicket" type="com.form.admin.FFunction"/>
+    <form-bean name="searchAlert" type="com.form.admin.FFunction"/>
+    <form-bean name="reportsNormBuffer" type="com.form.evn.reportNormBuffer.FReportNormBuffer"/>
+    <form-bean name="sourceAccountBuffer" type="com.form.evn.sourceAccountBuffer.FSourceAccountBuffer"/>
+    <form-bean name="sourceConnectBuffer" type="com.form.evn.sourceConnectBuffer.FSourceConnectBuffer"/>
+    <form-bean name="ticketAction" type="com.form.evn.ticket.FTicket"/>
+    <form-bean name="ticket" type="com.form.evn.ticket.FTicket"/>
+    <form-bean name="tables" type="com.form.evn.tables.FTables"/>
+    <form-bean name="searchTickets" type="com.form.evn.ticket.FTicket"/>
+    <form-bean name="alertAction" type="com.form.evn.alertBuffer.FAlertBuffer"/>
+    <form-bean name="searchAlerts" type="com.form.evn.alertBuffer.FAlertBuffer"/>
+    <form-bean name="fieldsAction" type="com.form.evn.FChangeData"/>
+    <form-bean name="evnErrorBuffer" type="com.form.evn.evnErrorBuffer.FEvnErrorBuffer"></form-bean>
+    <form-bean name="evnModuleBuffer" type="com.form.evn.evnModuleBuffer.FEvnModuleBuffer"></form-bean>
+    
+  </form-beans>
+  
+    
+  <action-mappings>
+    <action name="reportsBuffer" path="/reportsBuffer" type="com.action.evn.reportBuffer.AReportBuffer" unknown="false" validate="false">
+      <forward name="_PREPARED" path="/evn/reportsBuffer/reportsBufferedit.jsp"/>
+      <forward name="_SUCCESS" path="/evn/reportsBuffer/reportsBuffer.jsp"/>
+      <forward name="_SHOW" path="/evn/index.jsp"/>
+    </action>
+    
+    <action name="sourceAccountBuffer" path="/sourceAccountBuffer" type="com.action.evn.sourceAccountBuffer.ASourceAccountBuffer" unknown="false" validate="false">
+      <forward name="_PREPARED" path="/evn/sourceAccountBuffer/sourceAccountBufferedit.jsp"/>
+      <forward name="_SHOW" path="/evn/index.jsp"/>
+    </action>
+    <action name="tables" path="/tables" type="com.action.evn.tables.ATables" unknown="false" validate="false">
+      <forward name="_PREPARED" path="/evn/tables/tablesedit.jsp"/>
+      <forward name="_SHOW" path="/evn/index.jsp"/>
+    </action>
+    
+    <action name="reportsNormBuffer" path="/reportsNormBuffer" type="com.action.evn.reportNormBuffer.AReportNormBuffer" unknown="false" validate="false">
+      <forward name="_PREPARED" path="/evn/reportsNormBuffer/reportsNormBufferedit.jsp"/>
+      <forward name="_SHOW" path="/evn/index.jsp"/>
+    </action>
+ 	
+ 	<action name="evnErrorBuffer" path="/evnErrorBuffer" type="com.action.evn.evnErrorBuffer.AEvnErrorBuffer" unknown="false" validate="false">
+      <forward name="_PREPARED" path="/evn/evnErrorBuffer/evnErrorBufferedit.jsp"/>
+      <forward name="_SHOW" path="/evn/index.jsp"/>
+    </action>
+    <action name="evnModuleBuffer" path="/evnModuleBuffer" type="com.action.evn.evnModuleBuffer.AEvnModuleBuffer" unknown="false" validate="false">
+      <forward name="_PREPARED" path="/evn/evnModuleBuffer/evnModuleBufferedit.jsp"/>
+      <forward name="_SHOW" path="/evn/index.jsp"/>
+    </action>
+    <action name="sourceConnectBuffer" path="/sourceConnectBuffer" type="com.action.evn.sourceConnectBuffer.ASourceConnectBuffer" unknown="false" validate="false">
+      <forward name="_PREPARED" path="/evn/sourceConnectBuffer/sourceConnectBufferedit.jsp"/>
+      <forward name="_SHOW" path="/evn/index.jsp"/>
+    </action>
+
+    <action name="ticketAction" path="/ticketAction" type="com.action.evn.ticket.ATicket" unknown="false" validate="false">
+        <forward name="_VIEW_TICKET" path="/evn/ticket/index.jsp"/>
+    </action>
+    <action name="ticket" path="/ticket" type="com.action.evn.ticket.ATicket" unknown="false" validate="false">
+        <forward name="_VIEW_TICKET" path="/evn/ticket/index.jsp"/>
+        <forward name="_PREPARED" path="/evn/ticket/form/ticketedit.jsp"/>
+    </action>
+    <action name="alertAction" path="/alertAction" type="com.action.evn.alertBuffer.AAlertBuffer" unknown="false" validate="false">
+        <forward name="_VIEW" path="/evn/alertBuffer/index.jsp"/>
+    </action>
+    
+    <action name="functionEvn" path="/functionEvn" type="com.action.evn.AFunctionEvn" unknown="false" validate="false">
+          <forward name="_VIEW" path="/evn/index.jsp"/>
+          <forward name="_VIEW_FKEY" path="/evn/content.jsp"/>
+          <forward name="_VIEW_TICKET" path="/evn/ticket/index.jsp"/>
+          <forward name="_VIEW_ALERT" path="/evn/alertBuffer/index.jsp"/>
+    </action>
+    <action name="searchTicket" path="/searchTicket" type="com.action.evn.AFunctionEvn" unknown="false" validate="false">
+          <forward name="_VIEW_TICKET" path="/evn/ticket/index.jsp"/>
+    </action>
+    <action name="searchTickets" path="/searchTickets" type="com.action.evn.ticket.ATicket" unknown="false" validate="false">
+          <forward name="_SEARCH_TICKET" path="/evn/ticket/index.jsp"/>
+    </action>
+
+    <action name="searchEvn" path="/searchEvn" type="com.action.evn.AFunctionEvn" unknown="false" validate="false">
+          <forward name="_VIEW" path="/evn/index.jsp"/>
+    </action>
+    <action name="operationEvn" path="/operationEvn" type="com.action.evn.AFunctionEvn" unknown="false" validate="false">
+          <forward name="_VIEW" path="/evn/index.jsp"/>
+    </action>
+    
+    <action name="searchAlert" path="/searchAlert" type="com.action.evn.AFunctionEvn" unknown="false" validate="false">
+          <forward name="_VIEW_ALERT" path="/evn/alertBuffer/index.jsp"/>
+    </action>
+  
+    <action name="searchAlerts" path="/searchAlerts" type="com.action.evn.alertBuffer.AAlertBuffer" unknown="false" validate="false">
+          <forward name="_SEARCH_ALERT" path="/evn/alertBuffer/index.jsp"/>
+    </action>
+
+
+  </action-mappings>
+</struts-config>

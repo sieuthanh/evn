@@ -1,0 +1,87 @@
+/* CSS Document */
+a:link {
+	color: #88ABE9;
+	text-decoration: none;
+}
+a:visited {
+	color: #4272D5;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+        background-color: #0f4186;
+	background-image: url(../images/login/bg.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	margin-top: 0;
+	margin-right: 5px;
+	margin-bottom: 0;
+        padding-bottom: 0;
+	margin-left: 5px;
+}
+
+#wrap {}
+#content {background: #fff; }
+#banner {
+	padding: 14px;
+	height: 30px;
+	line-height: 30px;
+	background-image: url(../images/login/bg_banner.jpg);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+}
+.left {
+	padding: 10px 30px;
+}
+.bg-left {
+	background: url(../images/login/bg_l.gif) repeat-x center top;
+}
+.menu {color: #5b94d7}
+.menu a:link, .menu a:visited {color: #000}
+.menu a:hover, .menu a:active {color: #3278CD}
+.bg-right {
+	background:url(../images/login/bg_r.gif) no-repeat left top;
+}
+.right {
+	background:url(../images/login/bg_r2.gif) no-repeat center bottom;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 200px;
+	padding-left: 10px;
+}
+.title {color: #5b94d7; font-weight:bold; font-size:12px}
+#footer {
+	color: #2a4564;
+	text-align: center;
+	clear:both;
+	background-color: #e5e5e5;
+	padding: 10px;
+	border-top: solid 1px #FFF;
+}
+.buttom{
+        background-image: url("../images/admin/login.png");
+        color:#FFF;font-weight:bold;
+        background-color:transparent;border:0px;height: 28px;
+        width:125px;cursor:pointer;visibility:inherit;
+}
+.error-alert{
+    color:Red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight: bold;
+}
+.line-main{
+  background:url(../images/login/0.gif) repeat-y;
+  height:100%;
+}

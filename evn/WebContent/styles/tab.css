@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+#ui-tabs-nav {
+	top:0px;
+	list-style:none;
+	margin:0;
+	padding:4px 0 0 0;
+	background:url(../images/newImages/i_45.gif) no-repeat right top;
+	position:relative;
+	height:37px;
+	z-index:9999;
+}
+.ui-tabs-hide {
+    display:none;
+}
+#ui-tabs-nav li {
+    float:left;
+	background:url(../images/newImages/tab-left.gif) no-repeat left top;
+	margin-right:2px;
+}
+#ui-tabs-nav li a:hover{
+	color:#000;
+}
+#ui-tabs-nav li.ui-tabs-selected{
+	background:#f6f6f6 url(../images/newImages/tab-left-select.gif) no-repeat left top;
+}
+#ui-tabs-nav li.ui-tabs-selected a{
+	background:url(../images/newImages/tab-right-select.gif) no-repeat right top;
+	/*padding:12px;*/
+	float:left;
+	color:#000;
+/*	height:37px;*/
+}
+#ui-tabs-nav li a{
+	text-align:center;
+	/*line-height:37px;*/
+	font:bold 11px Tahoma;
+	color:#656565;
+	text-decoration:none;
+	padding:12px;
+	background:url(../images/newImages/tab-right.gif) no-repeat right top;
+	/*height:37px;*/
+	float:left
+}
+
+
+
+
+

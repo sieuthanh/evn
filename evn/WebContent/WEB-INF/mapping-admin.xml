@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="language" type="com.form.admin.language.FLanguage"/>
+    <form-bean name="login" type="com.form.admin.login.FLoginSystem"/>
+    <form-bean name="function" type="com.form.admin.FFunction"/>
+    <form-bean name="users" type="com.form.admin.users.FUser"/>
+    <form-bean name="groups" type="com.form.admin.groups.FGroup"/>
+    <form-bean name="apps" type="com.form.admin.apps.FApp"/>
+    <form-bean name="departments" type="com.form.admin.departments.FDepartment"/>
+    <form-bean name="log" type="com.form.admin.log.FLog"/>
+    
+    <form-bean name="reportSystem" type="com.form.admin.reportSystem.FReportSystem"/>
+    <form-bean name="reportSystemSum" type="com.form.admin.reportSystem.sum.FReportSystem"/>
+  </form-beans>
+  
+  <action-mappings>
+     <action name="reportSystem" path="/reportSystem" type="com.action.admin.reportSystem.AReportSystem" unknown="false" validate="false">
+      <forward name="_ERROR" path="/admin/reportSystem/index.jsp"/>
+      <forward name="_PREPARED_EDIT" path="/admin/reportSystem/form.jsp"/>
+      <forward name="_VIEW" path="/admin/reportSystem/list.jsp"/>
+      <forward name="_LEFT" path="/admin/reportSystem/left.jsp"/>
+    </action> 
+     <action name="reportSystemSum" path="/reportSystemSum" type="com.action.admin.reportSystem.sum.AReportSystem" unknown="false" validate="false">
+      <forward name="_ERROR" path="/admin/reportSystem/sum/index.jsp"/>
+      <forward name="_PREPARED_EDIT" path="/admin/reportSystem/sum/index_config.jsp"/>
+      <forward name="_VIEW" path="/admin/reportSystem/sum/list.jsp"/>
+      <forward name="_LEFT" path="/admin/reportSystem/sum/left.jsp"/>
+    </action> 
+
+    <action name="log" path="/log" type="com.action.admin.log.ALog" unknown="false" validate="false">
+      <forward name="_PREPARED_EDIT" path="/admin/users/userchangepass.jsp"/>
+       <forward name="_VIEW" path="/admin/log/listlog.jsp"/>
+    </action>
+
+    
+
+    <action name="language" path="/language" type="com.action.admin.language.ALanguage" unknown="false" validate="false"/>
+    
+    <action name="login" path="/login" type="com.action.admin.login.ALoginSystem" unknown="false" validate="false">
+      <forward name="_SUCCESS" path="/admin/forward.jsp"/>
+      <forward name="_PREPARED_EDIT" path="/admin/users/userchangepass.jsp"/>
+      <forward name="_ERROR" path="/admin/window.jsp"/>
+      <forward name="_HOME" path="/main/index.jsp"/>
+    </action>
+    <action name="users" path="/users" type="com.action.admin.users.AUsers" unknown="false" validate="false">
+      <forward name="_ACTIVE" path="/admin/users/active.jsp"/>
+      <forward name="_ERROR" path="/admin/window.jsp"/>
+      <forward name="_CREATE" path="/admin/alert.jsp"/>
+      <forward name="_EDIT" path="/admin/alert.jsp"/>
+      <forward name="_DELETE" path="/admin/users/users.jsp"/>
+      <forward name="_VIEW" path="/admin/menu/option.jsp"/>
+      <forward name="_MENU_OPTION" path="/admin/role/report.jsp"/>      
+      <forward name="_SEARCH" path="/admin/users/list.jsp"/>
+    </action>
+    
+    <action name="groups" path="/groups" type="com.action.admin.groups.AGroups" unknown="false" validate="false">
+      <forward name="_CREATE" path="/admin/groups/groupview.jsp"/>
+      <forward name="_EDIT" path="/admin/groups/groupview.jsp"/>
+      <forward name="_DELETE" path="/admin/groups/groupview.jsp"/>
+    </action>
+    <action name="apps" path="/apps" type="com.action.admin.apps.AApps" unknown="false" validate="false">
+      <forward name="_CREATE" path="/admin/apps/appview.jsp"/>
+      <forward name="_EDIT" path="/admin/apps/appview.jsp"/>
+      <forward name="_DELETE" path="/admin/apps/appview.jsp"/>
+      <forward name="_VIEW" path="/admin/apps/appedit.jsp"/>
+    </action>
+
+    <action name="departments" path="/departments" type="com.action.admin.departments.ADepartments" unknown="false" validate="false">
+      <forward name="_CREATE" path="/admin/departments/departmentView.jsp"/>
+      <forward name="_EDIT" path="/admin/departments/departmentView.jsp"/>
+      <forward name="_DELETE" path="/admin/departments/departmentView.jsp"/>
+    </action>
+    
+    <action name="function" path="/function" type="com.action.admin.AFunction" unknown="false" validate="false">
+          
+          <forward name="_SYSTEM_REPORT_SUM" path="/admin/reportSystem/sum/index_config.jsp"/>
+          <forward name="_SYSTEM_REPORT" path="/admin/reportSystem/index_config.jsp"/>
+          <forward name="_LISTUSERS" path="/admin/users/userslist.jsp"/>
+          <forward name="_EDITUSERS" path="/admin/users/userview.jsp"/>
+          <forward name="_VIEWUSERS" path="/admin/users/users.jsp"/>
+          <forward name="_PREPARED_EDIT" path="/admin/users/userchangepass.jsp"/>
+          <forward name="_LISTGROUPS" path="/admin/groups/groupview.jsp"/>
+          <forward name="_VIEWGROUPS" path="/admin/groups/groupedit.jsp"/>
+          <forward name="_EDITGROUPS" path="/admin/groups/groupview.jsp"/>
+          <forward name="_LISTAPPS" path="/admin/apps/appview.jsp"/>
+          <forward name="_LISTDEPARTMENTS" path="/admin/departments/departmentView.jsp"/>
+          <forward name="_VIEWDEPARTMENTS" path="/admin/departments/departmentForm.jsp"/>
+          <forward name="_LISTLOGS" path="/admin/log/listlog.jsp"/>
+          <forward name="_ACTIVE" path="/admin/window.jsp"/>            
+    </action>
+    
+  
+    
+  </action-mappings>
+</struts-config>

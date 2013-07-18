@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+<!--
+    Validation Rules for the Struts Example Web Application
+    $Id: validation.xml,v 1.8 2003/05/25 22:51:20 dgraham Exp $
+-->
+<form-validation>
+  <!-- ========== Default Language Form Definitions ===================== -->
+  <formset>
+  <constant>
+    <constant-name>phone</constant-name>
+    <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+  </constant> 
+  
+   
+   <form name="searchRepairForm">
+             <field property="fromdateTemp"
+                    depends="required">
+                <arg0   key="prompt.fromdate"/>
+            </field>
+            <field property="todateTemp"
+                    depends="required">
+                <arg0   key="prompt.todate"/>
+            </field>
+             
+  </form>
+   <form name="reportDepreciationForm">
+             <field property="monthkh"
+                    depends="required,numeric">
+                <arg0   key="prompt.monthkh"/>
+            </field>
+            <field property="yearkh"
+                    depends="required,numeric">
+                <arg0   key="prompt.yearkh"/>
+            </field>
+             
+  </form>
+  <form name="changceStatusFixedassetForm">
+             <field property="bean.statusId"
+                    depends="required">
+                <arg0   key="prompt.status.statusId"/>
+            </field>
+                       
+  </form>
+  
+   <form name="processManagerForm">
+             <field property="status.statusId"
+                    depends="required">
+                <arg0   key="prompt.status.statusId"/>
+            </field>
+            <field property="department.departmentId"
+                    depends="required">
+                <arg0   key="prompt.department.receive"/>
+            </field>
+            
+  </form>
+
+  <form name="createPersonCalendarForm">
+             <field property="bean.department"
+                    depends="required">
+                <arg0   key="prompt.personcalendar.department"/>
+            </field>
+            
+            <field property="bean.person"
+                    depends="required">
+                <arg0   key="prompt.personcalendar.person"/>
+            </field>
+             <field property="bean.mobile"
+                    depends="required">
+                <arg0   key="prompt.personcalendar.mobile"/>
+            </field>
+             <field property="bean.phone"
+                    depends="numeric">
+                <arg0   key="prompt.personcalendar.phone"/>
+            </field>
+             <field property="dateTemp"
+                    depends="required, date">
+                <arg0   key="prompt.personcalendar.date"/>
+            </field>
+            
+  </form>
+  
+  <form name="vmsChangceTypeRequireForm">
+             <field property="bean.typeRequireId"
+                    depends="required">
+                <arg0   key="prompt.typerequire.name"/>
+            </field>
+            
+  </form>
+
+   <form name="depreciationCountForm">
+             <field property="fromthang"
+                    depends="required,numeric">
+                <arg0   key="prompt.fromthang"/>
+            </field>
+            <field property="fromnam"
+                    depends="required,numeric">
+                <arg0   key="prompt.fromnam"/>
+            </field>
+             <field property="tothang"
+                    depends="required,numeric">
+                <arg0   key="prompt.tothang"/>
+            </field>
+             <field property="tonam"
+                    depends="required,numeric">
+                <arg0   key="prompt.tonam"/>
+            </field>
+             
+  </form>
+  <form name="searchDepreciationForm">
+             <field property="monthDepreciationTemp"
+                    depends="required,numeric">
+                <arg0   key="prompt.monthkh"/>
+            </field>
+            <field property="yearDepreciationTemp"
+                    depends="required,numeric">
+                <arg0   key="prompt.yearkh"/>
+            </field>
+             
+  </form>
+  
+  
+<form name="deleteDepreciationFrom">
+             <field property="fromthang"
+                    depends="required,numeric">
+                <arg0   key="prompt.fromthang"/>
+            </field>
+            <field property="fromnam"
+                    depends="required,numeric">
+                <arg0   key="prompt.fromnam"/>
+            </field>
+             
+  </form>
+  <form name="createTypeRequireForm">
+             <field property="bean.name"
+                    depends="required">
+                <arg0   key="prompt.typerequire.name"/>
+            </field>
+             <!--<field property="bean.description"
+                    depends="required">
+                <arg0   key="prompt.typerequire.description"/>
+            </field> -->
+  </form>
+  <form name="createRequireForm">
+             <field property="bean.content"
+                    depends="required">
+                <arg0   key="prompt.require.content"/>
+            </field>
+            
+            <field property="bean.subject"
+                    depends="required">
+                <arg0   key="prompt.require.subject"/>
+            </field>
+      </form>
+      
+  <form name="loginForm">
+             <field property="username"
+                    depends="required, username">
+                <arg0   key="prompt.user.username"/>
+            </field>
+      </form>
+  
+   <form name="createUserGroupForm">
+             <field property="bean.name"
+                    depends="required">
+                <arg0   key="prompt.usergroup.name"/>
+            </field>
+      </form>
+      
+   <form name="createUserForm">
+              <field property="bean.fullName"
+                    depends="required">
+                <arg0   key="prompt.fullName"/>
+            </field>
+             <field property="bean.username"
+                    depends="required, username">
+                <arg0   key="prompt.username"/>
+            </field>
+             <field property="bean.function"
+                    depends="required">
+                <arg0   key="prompt.function"/>
+            </field>
+             <field property="bean.email"
+                    depends="email">
+                <arg0   key="prompt.email"/>
+            </field>
+            <field property="department.departmentId"
+                    depends="required">
+                <arg0   key="prompt.department.name"/>
+            </field>
+            
+      </form>
+    
+     <form name="comfirmForm">
+              <field property="password"
+                    depends="required">
+                <arg0   key="prompt.password"/>
+            </field>
+    </form>
+    
+      
+    <form name="createUnitForm">
+                <field property="bean.name"
+                    depends="required, maxlength">
+                <arg0   key="prompt.unit.name"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>50</var-value>
+                </var>
+            </field>
+            
+    </form>
+    <form name="searchFixedAssetForm">
+                <field property="keyWord"
+                    depends="required">
+                <arg0   key="prompt.fixedasset.name"/>
+                
+                </field> 
+     </form> 
+    <form name="createTypeFixedAssetForm">
+                <field property="bean.name"
+                    depends="required, maxlength">
+                <arg0   key="prompt.typefixedasset.name"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>100</var-value>
+                </var>
+            </field>
+            
+             <field property="bean.code"
+                    depends="required, numeric">
+                <arg0   key="prompt.typefixedasset.code"/>
+                
+                </field> 
+                
+                <field property="bean.typeCode"
+                    depends="required">
+                <arg0   key="prompt.typefixedasset.typecode"/>
+                
+                </field> 
+            
+    </form>
+    <form name="createPurposeUseForm">
+                <field property="bean.name"
+                    depends="required, maxlength">
+                <arg0   key="prompt.purposeuse.name"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>50</var-value>
+                </var>
+            </field>
+            
+    </form>
+    <form name="createCauseForm">
+                <field property="bean.name"
+                    depends="required, maxlength">
+                <arg0   key="prompt.cause.name"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>50</var-value>
+                </var>
+            </field>
+            
+    </form>
+
+    <form name="createStatusForm">
+                <field property="bean.name"
+                    depends="required, maxlength">
+                <arg0   key="prompt.status.name"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>50</var-value>
+                </var>
+            </field>
+            
+    </form>
+    <form name="createSourceForm">
+                <field property="bean.name"
+                    depends="required, maxlength">
+                <arg0   key="prompt.source.name"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>50</var-value>
+                </var>
+            </field>
+            
+    </form>
+    <form name="createLiquidateForm">
+                <field property="bean.code"
+                    depends="required, maxlength">
+                <arg0   key="prompt.fixedasset.code"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>50</var-value>
+                </var>
+            </field>
+            <field property="dateTemp"
+                    depends="required">
+                <arg0   key="prompt.repairdate.name"/>
+                
+                </field> 
+            <field property="bean.value"
+                    depends="required">
+                <arg0   key="prompt.liquidatevalue.name"/>
+                
+                </field> 
+                
+                   <field property="bean.personLiquidate"
+                    depends="required">
+                <arg0   key="prompt.liquidatevalue.person"/>
+                
+                </field> 
+    </form>
+    
+    
+    <form name="createRepairForm">
+                <field property="dateTemp"
+                    depends="required">
+                <arg0   key="prompt.repairdate.name"/>
+                
+                </field> 
+            
+            
+    </form>
+    <form name="createSchelMaintainForm">
+                <field property="dateTemp"
+                    depends="required">
+                <arg0   key="prompt.repairdate.name"/>
+                
+                </field> 
+            
+            
+    </form>
+    
+    <form name="createInventoryForm">
+                <field property="dateTemp"
+                       depends="required">
+                    <arg0   key="prompt.repairdate.name"/>                
+                </field> 
+                <field property="bean.code"
+                       depends="required">
+                    <arg0   key="prompt.fixedasset.code"/>                
+                </field> 
+                 <field property="bean.valueInven"
+                       depends="required">
+                    <arg0   key="prompt.inventory.valueInven"/>                
+                </field> 
+                 <field property="bean.personInven"
+                       depends="required">
+                    <arg0   key="prompt.inventory.personInven"/>                
+                </field>                             
+    </form>
+    <form name="createFixedAssetForm">
+            <field property="bean.invoiceCode"
+                        depends="required">
+                    <arg0   key="prompt.fixedasset.invoiceCode"/>
+                 </field>
+            <field property="dateInvoiceTemp"
+                          depends="required, date">
+                     <arg0   key="prompt.fixedasset.dateInvoiceTemp"/>
+                </field> 
+    
+             <field property="bean.code"
+                    depends="required">
+                <arg0   key="prompt.fixedasset.code"/>
+             </field>
+             <field property="bean.name"
+                      depends="required">
+                     <arg0   key="prompt.fixedasset.name"/>
+                </field>
+                
+                <field property="dateCreateTemp"
+                      depends="required">
+                     <arg0   key="prompt.fixedasset.datecreate"/>
+                </field> 
+                
+               
+                <field property="dateUserTemp"
+                      depends="required">
+                     <arg0   key="prompt.fixedasset.dateuser"/>
+                </field> 
+                <field property="priceTemp"
+                      depends="required">
+                     <arg0   key="prompt.fixedasset.price"/>
+                </field> 
+                <field property="dateStartTemp"
+                       depends="required">
+                     <arg0   key="prompt.fixedasset.datestart"/>
+                 </field> 
+            
+                 <field property="rateTemp"
+                       depends="required">
+                     <arg0   key="prompt.fixedasset.rate"/>
+                 </field>
+                  <field property="monthTermTemp"
+                       depends="required">
+                     <arg0   key="prompt.fixedasset.monthTermTemp"/>
+                 </field>
+                 <field property="unit.unitId"
+                      depends="required">
+                    <arg0   key="prompt.fixedasset.unit"/>
+                
+                </field>
+                 <field property="cause.causeId"
+                      depends="required">
+                      <arg0   key="prompt.fixedasset.cause"/>
+                </field>
+                <field property="purposeUse.purposeUseId"
+                       depends="required">
+                      <arg0   key="prompt.fixedasset.mucdich"/>
+                </field>
+                <field property="typeFixedAsset.typeFixedAssetId"
+                        depends="required">
+                      <arg0   key="prompt.fixedasset.typefixed"/>
+                </field>
+                
+                <field property="value1"
+                        depends="numeric">
+                      <arg0   key="prompt.fixedasset.source.value1"/>
+                </field>
+                
+                <field property="bean.country"
+                        depends="required">
+                      <arg0   key="prompt.fixedasset.country"/>
+                </field>
+                
+                
+     </form>
+    
+    <form name="createMaintainForm">
+                <field property="dateTemp"
+                    depends="required">
+                <arg0   key="prompt.repairdate.name"/>
+                
+                </field> 
+            
+            
+    </form>
+  
+    <form name="createDepartmentForm">
+                <field property="bean.name"
+                    depends="required, maxlength">
+                <arg0   key="prompt.department.name"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>200</var-value>
+                </var>
+            </field>
+            
+    </form>
+    
+    
+  </formset>
+</form-validation>

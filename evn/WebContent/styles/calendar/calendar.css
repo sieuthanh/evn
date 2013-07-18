@@ -1,0 +1,897 @@
+/*------------------------------------------------------------------------
+# DanTri - November 2008
+# ------------------------------------------------------------------------
+# Author: hoainam12k
+# Websites:  http://www.vannyneo.com -  Email: hoainam12k@gmail.com
+------------------------------------------------------------------------- 58*/
+* {margin: 0; padding: 0;}
+body {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333333;}
+a {text-decoration: none; outline: none; color: #004175;}
+a:hover {color: #4F82AC;}/*a:visited {color: #333;}*/
+a img {border: none}
+a.readmore {background:url(/images/calendar/xemtiep.png) no-repeat right center; font-size: 11px; color: #999999;padding-right: 10px}
+a.readall {text-decoration:underline; color: #cc0033}
+ul {list-style: none}
+#neo-pagewrap { width: 980px; margin: 0 auto; padding: 0 10px; background: #FFFFFF}
+/*header*/
+#neo-header {height: 55px;position: relative; background: url(/images/calendar/headerbg.png) repeat-x left top}
+#logo {position: absolute;  top: 0px;}
+#logo h1 {background: url(/images/calendar/logo.jpg) no-repeat top left; }
+#logo a {display: block; width: 240px; height: 80px;text-indent: -5000px}
+#neo-header-r {position: absolute;top: 22px;right: -9px; width: 310px; height: 52px}
+.neo-headerwrap  { width: 980px; margin: 0 auto; position: relative; height:85px;}
+/*quang cao header*/
+.qc-headerleft470x90, .qc-headerright470x90 {width: 470px; height: 90px}
+.qc-headerleft470x90 {float: left}
+.qc-headerright470x90 {float: right}
+/*header right menu*/
+.hrightmenu {padding:0;display:block;}
+.hrightmenu li {padding:0; list-style:none; display:block; float: left; margin: 0 4px 4px 0;font-weight: bold; color: #666666; font-size: 10px; font-family: Tahoma}
+.hrightmenu li a {float:left;  height: 22px; display:block; color: #333333; text-decoration:none;cursor:pointer;line-height: 22px}
+.hrightmenu li a:hover {color: #ff0000}
+.hrightmenu li.vieclam a {padding-left: 29px; width: 51px;background: url(/images/calendar/hright-vieclam.png) no-repeat left top}
+.hrightmenu li.game a {padding-left: 29px;width: 50px;background: url(/images/calendar/hright-game.png) no-repeat left top}
+.hrightmenu li.raovat a {padding-left: 29px;width: 51px;background: url(/images/calendar/hright-raovat.png) no-repeat left top}
+.hrightmenu li.muaban a {padding-left: 29px;width: 50px;background: url(/images/calendar/hright-muaban.png) no-repeat left top}
+.hrightmenu li.tamlong a {padding-left: 33px;width: 99px; background: url(/images/calendar/hright-tamlong.png) no-repeat left top}
+.hrightmenu li.diendan a {padding-left: 32px;width: 100px; background: url(/images/calendar/hright-diendan.png) no-repeat left top}
+/*header search*/
+#neo-hs {position: absolute;top: 26px; right: 320px;width: 360px; height:48px;}
+ul.neo-hstabs li {display: inline}
+ul.neo-hstabs li a { position:absolute;top: 0; height: 19px; padding-top:3px; text-align: center; color: #666666}
+ul.neo-hstabs li a:hover {color: #ff0000;}
+ul.neo-hstabs li a.active {font-weight: bold;color: #ff0000; }
+ul.neo-hstabs li.hstab1 a {left: 0; width: 106px;}
+ul.neo-hstabs li.hstab2 a {left: 107px; width: 95px;}
+ul.neo-hstabs li.hstab1 a.active {background: url(/images/calendar/header-searchtabs.png) no-repeat left top}
+ul.neo-hstabs li.hstab2 a.active {background: url(/images/calendar/header-searchtabs.png) no-repeat right top}
+.neo-hscontent {position: absolute; top:20px;left: 0; width: 364px; height:24px;}
+.neo-hscontentbg {position: absolute; top:0;left: 0; width: 364px; height:24px; background: url(/images/calendar/header-search.png) no-repeat left top;z-index:1}
+.neo-hs-submit {position: absolute; width: 77px; height: 24px; top: -1px; right: 1px; background: none; border: none; color: #FFF; font-weight: bold; letter-spacing: -1px;z-index:3}
+.neo-hs-input {position: absolute; width: 286px; height: 16px; padding-top:5px; top: 0px; left: 5px; background: none; border: none;z-index:2; color: #999999}
+/*new header*/
+.top-ads {width: 100%; margin: 0 auto; padding: 4px 0; background:transparent url(/images/calendar/headerbg.png) repeat-x scroll left top}
+/*spotlight*/
+#neo-container {}
+#neo-spotlight {width: 100%;border-bottom: 1px solid #e2e2e2}
+#nc-tinnoibat { position: absolute; left: 0; top: 28px; height: 29px; background: url(/images/calendar/nc-tinnoibat.png) repeat-x left top; width: 100%}
+.nc-noibattit {text-indent: -5000px; width: 90px; height: 20px; background: url(/images/calendar/nc-noibattit.png) no-repeat left top; top: 3px; float:left;}
+/*spotlight ads*/
+.spl-ads {padding: 5px 0;}
+.spl-ads img {padding: 1px; border: 1px solid #cccccc}
+.spl-adleft {width: 49%; float: left}
+.spl-adright {width: 49%; float: right}
+.nct-left { width: 837px; float: left; padding: 0 10px}
+.nct-left span {color: #ed1c24; padding-right: 10px; background: url(/images/calendar/nct-noibat.png) no-repeat right center; font-weight: bold; display: block; float: left; width: 40px;margin-right: 8px}
+.nct-marquee {float:left; height: 20px; line-height: 20px; top: 3px; font-family: Tahoma; font-size: 11px;overflow: hidden}
+.nct-marquee ul li {display: inline; background: url(/images/calendar/nct-marqueeli.png) no-repeat left 6px; padding: 0 5px 0 10px;}
+.nct-marquee ul li a {color: #0c4491;}
+a.nc-rss { background: url(/images/calendar/nc-rss.png) no-repeat left top; width: 36px; height: 14px;float:left;margin-top:5px;}
+#neo-headline {width: 620px;float: left;background:url(/images/calendar/headline-newbg.png) repeat-y 5px top}
+/*headline type 1*/
+.hl-latestnews1 {width: 336px; float: left; padding:7px; border-right: 1px solid #ababde}
+.hl-latestnews1 img {padding: 4px; background: #ccccff}
+.hl-latestnews1 h3 {font-size: 22px; font-weight: bold; margin-top: 6px;}
+.hl-latestnews1 h3 a {color: #000099}
+.hl-latestnews1 h3 a span {display: block}
+.hl-latestnews1 p {font-weight: bold}
+.hl-readmore {text-align: right}
+.hl-othernews1 {width:255px; float: right; padding:7px;}
+.hlo-news {margin-bottom: 13px;}
+.hlo-img {width: 112px; float: left; overflow: hidden;}
+.hlo-img img {padding: 4px; background: #d8d8d8}
+.hlo-info {width: 82px; float:right}
+.hlo-info h3 {font-size: 12px; font-weight: bold;}
+.hl-otherarticles {clear: both; border-top:1px solid #ababde; font-size: 15px; font-weight: bold; padding: 8px}
+.hl-otherarticles ul li {background:url(/images/calendar/hl-otherarticlesli.png) no-repeat left 8px; padding: 4px 0 5px 12px;}
+.hl-otherarticles ul li a span {background:url(/images/calendar/xemtiep.png) no-repeat right center; font-size: 10px;font-weight: normal; color: #6666cc; text-decoration:underline; padding-right: 18px;}
+#neo-splads {width: 360px;float: right;background: url(/images/calendar/neo-splads.png) #f3f3f3 repeat-y left top;  }
+.neo-spladscontent {/*background: url(/images/calendar/qcaoboiadmicro.png) no-repeat left bottom;*/padding: 5px 0 5px 10px; height:465px;}
+.neo-spladscontent div {padding-bottom: 10px;}
+/*headline type 2*/
+.hl-latestnews2 {text-align: center; padding: 6px;}
+.hl-latestnews2 img {padding: 4px; background: #ccccff}
+.hl-latestnews2a { width: 343px; float: left}
+.hl-latestnews2a h3 {font-size: 22px; font-weight: bold; margin-top: 6px;}
+.hl-latestnews2a h3 a {color: #000099}
+.hl-latestnews2a h3 a span {display: block}
+.hl-otherarticles2 {width: 262px; float: right; border-left: 1px solid #ababde; font-size: 12px; font-weight: bold; padding: 3px;}
+.hl-otherarticles2 ul li {background: url(/images/calendar/hl-otherarticles2li.png) no-repeat left 7px;padding: 3px 0 2px 7px;}
+.hl-othernews2 {border-top: 1px solid #ababde; padding-top: 10px;}
+.hl-othernews2 .hlo-newsleft, .hl-othernews2 .hlo-newscenter, .hl-othernews2 .hlo-newsright {width: 126px; float: left; margin-right: 33px;}
+.hl-othernews2 .hlo-newsright {margin-right: 0}
+.hl-othernews2 .hlo-info {margin-top: 4px;}
+.hl-latestnews2a p {font-weight: bold}
+.hl-latestnews2a .hl-readmore {margin-top: 18px;}
+/* headline type 3*/
+.hl-latestnews3 {width: 338px; float: left;padding: 6px 6px 6px 0;}
+.hl-latestnews3 h3 {font-size: 21px; margin-bottom: 10px; font-family:"Times New Roman",Georgia,Times;}
+.hl-latestnews3 h3 span {display: block}
+/*.hl-latestnews3 p {font-weight: bold;}*/
+.hl-latestnews3 .hl-readmore {padding-top: 5px;}
+.hl-otherarticles3 {width: 266px; float: right;padding: 10px 1px 0;}
+.hl-otherarticles3 {padding-top: 1px;}
+.hl-otherarticles3 h3 { background: url(/images/calendar/sukientrongngay.jpg) no-repeat left top; color: #FFFFFF; line-height: 31px; height: 17px;text-transform:uppercase; font-size: 12px;padding: 0 0 8px 25px}
+/*.hl-otherarticles3 h3 {background:url(/images/calendar/hl-otherarticles3h3.png) no-repeat 5px 2px; padding:0 0 14px 14px; text-transform:uppercase; color: #004175; font-size: 12px;}*/
+.hl-otherarticles3 a.readmore {color: #6666cc}
+.hl-otherarticles3 img, .hl-latestnews3 img {margin-bottom: 5px;}
+.hl-latestnews3 img {background:#d8d8d8;padding:4px;}
+.hl-otherarticles3 ul {padding-left: 5px}
+.hl-otherarticles3 ul li {padding: 4px 3px 1px 12px; background: url(/images/calendar/hl-otherarticles3li.png) no-repeat left 9px;}
+.hl-otherarticles3 ul li a {font-size: 12px;}
+.hl-otherarticles3 ul li a:hover {color: #4169E1; text-decoration:underline}
+.hl-othernews3 { padding-bottom:5px; padding-top: 5px;background: url(/images/calendar/hl-othernews3.png) repeat-x left top #FFFFFF}
+.hl-othernews3 .hlo-newsleft, .hl-othernews3 .hlo-newscenter, .hl-othernews3 .hlo-newsright {width: 199px; float: left; margin-right: 10px;}
+.hl-othernews3 .hlo-newsright {margin-right: 0}
+.hl-othernews3 .hlo-info {margin-top: 4px;}
+/*headline type 4*/
+.hl-latestnews4 {padding: 0 5px 14px 0;}
+.hl-latestnews4 p {padding: 0 0 10px 0}
+.hl-latestnews4 img {width: 326px; padding: 4px; background: #ccccff;float: left; margin-right: 8px;}
+.hl-latestnews4 h3 {font-weight: bold; font-size: 24px; padding: 5px 0}
+.hl-latestnews4 h3 a {color: #cc0033}
+.hl-otherarticles4 h3 {font-weight: bold; font-size: 12px; text-transform: uppercase; border-bottom: 1px solid #ababde;border-top: 1px solid #ababde; color: #000099; padding: 3px 12px; margin-bottom: 8px;}
+.hl-otherarticles4 ul li a {font-weight: bold; font-size: 18px; color: #cc0000; line-height: 22px}
+.hl-otherarticles4 ul li a span {background:url(/images/calendar/xemtiep.png) no-repeat right center; font-size: 10px;font-weight: normal; color: #6666cc; text-decoration:underline; padding-right: 18px;}
+.hl-othernews4 {padding-top: 10px;}
+.hl-othernews4 .hlo-newsleft, .hl-othernews4 .hlo-newscenter, .hl-othernews4 .hlo-newsright {width: 126px; float: left; margin-right: 33px;}
+.hl-othernews4 .hlo-newsright {margin-right: 0}
+.hl-othernews4 .hlo-info {margin-top: 4px;}
+.splcontent-col {}
+p.introtext {font-weight: bold}
+/*content short*/
+.splcc-content, .splcc-contentdetail {padding: 8px;}
+.splcc-content .hl-otherarticles {border: none; font-size:12px;}
+.splcc-content .hl-otherarticles ul li {background: none; padding: 0}
+.splcc-content h3 {font-size: 22px; font-weight: bold; margin-bottom: 8px;}
+.splcc-content h3 a span {display: block}
+.splcc-content p.introtext {font-weight: bold}
+.splcc-content p {padding: 6px 0;}
+.introimg {float: left; margin-right: 8px; font-size: 10px;font-family:"Verdana"; text-align: justify}
+/*content full*/
+.splcc-contentdetail p {padding: 9px 0;}
+.splcc-contentdetail .hl-otherarticles {border: none; font-size:12px;}
+.splcc-contentdetail .hl-otherarticles ul li {background: none; padding: 0}
+.splcc-contentdetail h3 {font-size: 24px; font-weight: bold;}
+.detail-time {margin: 5px 0}
+a.splcc-category {font-size: 12px; color: #cc0033}
+.splcc-contentdetail h3 a span {display: block}
+.splcc-contentdetail p.introtext {font-weight: bold; color: #000099}
+.splcc-contentdetail p {padding: 6px 0;}
+.splcc-contentdetail .introimg img {width: 130px}
+.splcc-contentdetail h4 {color: #000096; font-size: 15px; margin: 6px 0 0 0}
+.splcc-contentdetail .center-img { text-align: center; padding: 8px 0; clear: both}
+.author {color: #5f5f5f; text-align: right; clear: both; padding-top: 5px;}
+.author h5 {color: #060891; font-weight: bold; font-size: 12px;}
+/*mach tin tuc*/
+.relatednews {background: #e5e5f5; width:303px; float: right; padding: 6px;color: #000099; font-weight: bold}
+.relatednews a {color: #000099;}
+.relatednews h3 {text-transform: uppercase; font-size: 12px;text-decoration: underline; margin-bottom: 3px;}
+.relatednews ul li {background: url(/images/calendar/machtintuc-li.png) no-repeat left 5px; padding: 2px 0 2px 10px;}
+.relatednews .hl-readmore {margin-top: 5px;}
+.relatednews a.readall {color: #cc0033; margin-top: 5px;}
+/*detail Note*/
+.detail-note {width: 226px; float: left; padding: 4px; background: #e5e5f5; margin-right: 8px}
+.detail-note h3 {background: #6c6cc4; text-transform:uppercase; color: #FFF; font-size: 12px; text-align: center; padding: 4px;}
+.dn-content {padding: 8px;}
+.detail-note .note-title {padding: 2px 0 6px 0}
+.detail-note .note-title span {color: #000099;background: url(/images/calendar/note-title.png) no-repeat left top; padding-left: 18px; text-decoration: underline}
+.note-img {width: 60px; float: left; margin-right: 6px}
+.note-img img {width: 60px;}
+.dn-content .hl-readmore {font-weight: bold; clear: both}
+.dn-content p {padding: 0}
+.splright-col {background: #FFF;height: 410px; overflow: hidden}
+.splinset-col {border-right: 1px solid #ababde;border-left: 1px solid #ababde; height: 410px; overflow: hidden}
+.splic-content {padding: 8px;}
+.splinset-col .hlo-news {margin: 0}
+.splinset-col .hl-readmore {margin-bottom: 12px}
+.splinset-col .hlo-info {width: 134px; float:left; margin-left: 8px}
+.splinset-col .hl-otherarticles ul li {line-height: 18px; padding:3px 0pt 3px 12px;}
+/*Container*/
+.container-bg {background:url(/images/calendar/neo-container-bg.png) #f0f0f0 repeat-x left top}
+#neo-maincontainer { border-top: 1px solid #e2e2e2}
+#content-col {width: 470px; float: left}
+.cc-ads {margin-bottom: 6px}
+#inset-col {width: 310px; float: left;background: url(/images/calendar/inset-colneo-bg.png) #f3f3f3 no-repeat left top;}
+.inset-col {background: url(/images/calendar/inset-colneo-bg.png) #f3f3f3 no-repeat left top; padding-top: 18px;}
+.ic-content {padding: 3px 0; text-align: center}
+.ic-adsleft {width: 160px; float: left; margin-left: 4px; display: inline}
+.ic-adsright {width: 146px;float: right}
+.ic-ads {}
+#right-col {width: 200px; float: right; background: #FFF;}
+.rc-content {padding:6px 0 6px 7px; text-align: center}		
+.rc-content div {}
+.rc-tieudiem h3 {background: #2f8aa1; color: #FFF; text-align: center; text-transform:uppercase; font-size: 13px; font-weight: bold; padding: 3px 0}
+/*thoi tiet */
+.thoitiet {background: url(/images/calendar/thoitiet.png) repeat-x left bottom; position: relative; height: 233px; width: 306px;text-align: left}
+.tt-select {width: 116px; height: 21px; position: absolute; top: 40px; left: 15px; border: 1px solid #ccc}
+.tt-homnay {width: 131px; position: absolute; top: 130px; left: 18px; color: #134879}
+.tt-homnay h4 {font-size: 12px; font-weight: bold}
+.tt-homnay span {display: block}
+.tt-anh {width: 104px; height: 52px; position: absolute; top: 66px; left: 13px;}
+.tt-anh img {padding: 0; margin: 0; border: none}
+.tt-anh1 {width: 145px; height: 50px; position: absolute; top: 45px; left: 13px;}
+.tt-step1 {width: 100px; height: 5px; position: absolute; top: 97px; left: 4px;}
+.tt-anh2 {width: 145px; height: 50px; position: absolute; top: 107px; left: 13px;}
+.tt-step2 {width: 100px; height: 5px; position: absolute; top: 159px; left: 4px;}
+.tt-anh3 {width: 145px; height: 52px; position: absolute; top: 169px; left: 13px;}
+.tt-anh1 span.tt-title , .tt-anh2 span.tt-title , .tt-anh3 span.tt-title {font-weight: bold; font-size: 11px; color: #666666; background-image: url(/images/calendar/dt-relatednews-li.png); background-repeat: no-repeat; background-position: 0px 6px; padding-left: 10px;}
+.tt-anh1 img , .tt-anh2 img , .tt-anh3 img {height: 30px; width: 30px; margin-top: 3px; margin-right: 5px; float:left;}
+.tt-anh1 span.tt-temp , .tt-anh2 span.tt-temp , .tt-anh3 span.tt-temp {font-weight: bold; color: #144878; font-size: 18px;}
+.tt-anh1 span.tt-desc , .tt-anh2 span.tt-desc , .tt-anh3 span.tt-desc {font-size: 11px; color: #225280;}
+.tygiangoaite,
+.giavang,
+.lichphatsong,
+.kqsoxo {display: block; width: 104px;font-size:12px; height: 19px; position: absolute; left: 185px; top: 12px; padding: 4px 0 0 2px}
+.giavang {top: 38px;font-size:12px;}
+.lichphatsong {top: 62px;font-size:12px;}
+.kqsoxo {top: 86px;font-size:12px;}
+.giavang,
+.kqsoxo {background: #f0f0f0}
+.duongdaynong {position: absolute; left: 160px; top: 140px; width: 130px; height: 37px; line-height: 18px; text-align: right;color: #999999;}
+.duongdaynong span {color: #ff6600; font-weight: bold}
+.tongbientap {position: absolute; width: 134px; height: 31px; padding-top: 4px; top: 185px; left: 160px; color: #999999; text-align: center}
+.tongbientap span {display: block; font-weight: bold; color: #004a89; text-transform:uppercase}
+/*tham do y kien*/
+.thamdoykien {border: 1px solid #cccccc}
+.thamdoykien h3 {background:url(/images/calendar/thamdoykienh3.png) repeat-x left bottom; line-height: 33px; color: #000; font-weight: bold; font-size: 16px; text-align: center}
+.thamdoykien-content {padding: 6px;text-align: left; color: #666666}
+.thamdoykien-content a {color: #0b4898; font-weight: bold; display: block; margin-bottom: 6px}
+.thamdoykien-content span {display: block; padding: 2px}
+a.xemketqua {display: block; width: 88px; height: 17px; border: 1px solid #cccccc; font-weight: normal; text-align: center; padding-top: 2px; color: #666666}
+a.xemketqua:hover {color: #8bb900}
+a.binhchon {display: block; width: 90px; height: 21px; background: url(/images/calendar/binhchon.png) no-repeat left top; margin-top: 8px}
+a.binhchon:hover {background: url(/images/calendar/binhchon.png) no-repeat left bottom;}
+/*category*/
+.neo-category {padding-bottom: 8px;border-bottom: 1px solid #d1d1d1; margin-top: 8px}
+ul.cat-tabs, 
+ul.cat-tabshover {background: url(/images/calendar/cat-headerbg.png) no-repeat left top; height: 27px; padding: 0}
+ul.cat-tabs li, 
+ul.cat-tabshover li {display: inline;line-height: 16px; padding: 2px 7px 0; font-size: 11px; background: url(/images/calendar/cat-tabshover-li.png) no-repeat right 7px}
+ul.cat-tabs li, 
+ul.cat-tabshover li.cat-last {background: none}
+ul.cat-tabs li a, 
+ul.cat-tabshover li a {color: #333333}
+ul.cat-tabs li.cat-header, 
+ul.cat-tabshover li.cat-header {color: #FFFFFF; background: url(/images/calendar/cat-sectitle.png) no-repeat right top; font-size: 11px;font-weight: bold;padding: 4px 22px 6px 5px; line-height: 22px; margin-left: 2px;text-transform:uppercase}
+ul.cat-tabs li.cat-header a,
+ul.cat-tabshover li.cat-header a {color: #FFF;}
+ul.cat-tabs li a {display: none}
+ul.cat-tabs li.cat-header a {display: inline}
+.cat-headline {margin-top: 8px;}
+.chl-img {width: 138px; float: left}
+/*.chl-info {width: 325px; float: left}
+.chl-info h4 {font-size: 14px; padding-bottom: 4px; font-weight: bold; font-family: "Times New Roman", Times, serif}
+.chl-info h4 span {display: block; color: #ff0000;font-size: 12px;}
+.chl-info a.readmore {display: block; text-align: right}*/
+.cat-morenews {margin-top: 10px; line-height: 16px}
+.cat-morenews a span {color: #ff0000;}
+.cat-morenews ul {padding-left: 6px}
+.cat-morenews ul li {background:url(/images/calendar/cat-morenewsli.png) no-repeat left 6px; padding-left: 12px}
+.cat-rss {float: right; width: 13px; margin-top: -10px}
+.cat-rss a {display: block; width: 13px; height: 13px; background: url(/images/calendar/cat-rss.png) no-repeat left top}
+/*category list news*/
+.neo-ln-content {padding: 15px;}
+.neo-ln-content h3 {font-size: 13px; font-weight: bold; margin: 4px 0}
+.neo-ln-content h3 a {color: #191970;}
+.neo-ln-content h3 a:hover {color:#6495ED;}
+.neo-ln-img {float: left; margin-right: 9px}
+.neo-ln-content .hl-readmore {clear: both}
+/*box latest news & related news*/
+.bn-tabs ul {margin-left: 7px;}
+.bn-tabs ul li {display: block;float: left; cursor: pointer;  margin-left: -1px; font-weight: bold}
+.bn-tabs ul li a {color: #333; display: block; padding: 8px 40px; margin-top: 4px;border: 1px solid #c7c7eb; border-bottom: none;}
+.bn-tabs ul li.active {background: #e0e0ec;}
+.bn-tabs ul li.active a {padding: 10px 40px;margin-top: 0px}
+.bn-tabs ul li a:hover {background: #e7e7ef;}
+.tab-content { border: 1px solid #c7c7eb; background: #efeff5}
+.tab-content a {color: #333}
+.tab-content a:hover {color:#191970;}
+.tab-content a.readmore {color: #6666cc}
+.tab-content .hl-readmore {padding: 8px;}
+.tab-content ul li {color: #333; border-bottom: 1px solid #c7c7eb; padding: 6px 4px 7px 20px}
+.tab-content ul li.last {border: none}
+/*tin tieu diem*/
+.tintieudiem-odd, .tintieudiem-even {padding: 2px;background: #ebf8e1}
+.tintieudiem-even {background: #d7f2d7}
+.ttd-img {width: 50px; float: left; margin-right: 6px;}
+.ttd-img img {width: 50px;}
+.ttd-title {padding-top: 4px;}
+.ttd-title a {color: #00344f;}
+.ttd-title a:hover {color: #4169E1;}
+/*Footer*/
+#neo-footer {clear: both;  text-align: center; line-height: 18px}
+.ft-menu { background: url(/images/calendar/ft-menu.png) repeat-x left top; padding: 6px 0 5px}
+.ft-rss {width: 38px; float: left; text-align: center}
+.ft-menur {width: 940px; float: right; text-align: center; color: #004175}
+.ft-menur a {color: #004175}
+.ft-top {text-align: right}
+.ft-more {background: url(/images/calendar/ft-more.png) repeat-x left top; padding: 13px 0 10px; color: #333}
+.ft-more a {color: #333}
+.dat_trang_chu a {color: #666666}
+.dat_trang_chu a:hover {color: #0066cc}
+.back_to_top a {color: #0066cc}
+
+/*Add fix*/
+.chl-img img {padding: 1px; border: 1px solid #cccccc}
+.categoryview .cat-headline { padding: 12px 5px 5px 0; margin: 0; border-bottom: 1px solid #dbdbdb; }
+.neo-catviewreadmore {clear: both;text-align: right; line-height: 10px}
+.neo-catviewreadmore a.readmore {font-family: Tahoma}
+.cat-trangsau {color: #ff0000; text-align: right; padding: 3px}
+.cat-trangsau a {color: #ff0000; font-weight: bold; font-family: Tahoma}
+.neo-otherarticles {margin-top: 26px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; background: url(/images/calendar/neo-otherarticles.png) repeat-x left top; margin-right: 1px;}
+.neo-otherarticles h3 {font-weight: bold; font-size: 15px; color: #004175; padding: 4px 0 2px 2px; letter-spacing: -1px}
+.neo-otherarticles ul {padding: 8px;}
+.neo-otherarticles ul li {line-height: 16px; background: url(/images/calendar/neo-otherarticles-ul-li.png) no-repeat left 7px; padding: 1px 0 1px 10px}
+.xembaitheongaythang {background: url(/images/calendar/xembaitheongaythang.png) no-repeat left top; width: 151px; height: 20px;border: none; cursor: pointer}
+/*tieu diem*/
+.neo-tieudiem {text-align: left; float:left;}
+.neo-tieudiem div h3 {font-weight: bold; font-size: 17px; color: #003866; text-transform:uppercase; padding: 9px 0 0 5px;background: url(/images/calendar/neo-tieudiemh3.png) repeat-x left top}
+.neo-tdcontent {background: url(/images/calendar/neo-tdcontent.png) repeat-y left top}
+.neo-tdct-top {background: url(/images/calendar/neo-tdct-top.png) no-repeat left top; padding-top: 15px;}
+.neo-tdct-bt {background: url(/images/calendar/neo-tdct-bt.png) no-repeat left bottom; padding: 0 15px 0px 12px;}
+.neo-tdctodd {padding: 5px}
+.neo-tdcteven {padding: 5px; background: #f2f8ff}
+/*.neo-tdct-img {width: 60px; float: left; margin-right: 7px}*/
+.neo-tdct-info {width: 204px; float: left}
+.neo-tdct-info-noimg {width: 100%; float: left}
+.neo-tdct-img img {padding: 2px; border: 1px solid #cccccc}
+/*theo dong su kien*/
+.neo-tdsk {text-align: left}
+.neo-tdsk h3 {font-weight: bold; font-size: 17px; color: #003866; text-transform:uppercase; padding: 9px 0 0 5px;}
+.neo-binhchon {text-align: left}
+.neo-binhchon h3 {font-weight: bold; font-size: 17px; color: #003866; text-transform:uppercase; padding: 9px 0 0 5px;}
+.neo-binhchon .neo-tdct-bt {padding: 0 20px 15px 20px;}
+.neo-binhchon span {display: block; padding-top: 5px}
+.bc-title {color: #000000; font-weight: bold}
+.bc-submitbtn {padding-top: 10px}
+.neo-binhchon a.binhchon {display: block; float: left; margin: 0 10px 0 0}
+.neo-binhchon a.xemketqua {display: block; float: left}
+/*hau truong san co*/
+.neo-htsc {text-align: left}
+.neo-htsc h3 {font-weight: bold; font-size: 17px; color: #003866; text-transform:uppercase; padding: 9px 0 0 5px;background: url(/images/calendar/neo-tieudiemh3.png) repeat-x left top}
+.neo-htsccontent {background: url(/images/calendar/neo-tdcontent.png) repeat-y left top}
+.neo-htsc-top {background: url(/images/calendar/neo-tdct-top.png) no-repeat left top; padding-top: 12px;}
+.neo-htsc-bt {background: url(/images/calendar/neo-tdct-bt.png) no-repeat left bottom; padding: 0 10px 15px; font-family: Tahoma; font-size: 11px}
+.neo-htsc-bt img {background: none; border: none; padding: 0}
+.htsc-title {font-weight: bold; padding: 9px 0 5px 9px}
+.neo-htsccontent ul {margin-left: 9px}
+.neo-htsccontent ul li {padding: 2px 0 2px 12px; background: url(/images/calendar/neo-htsccontent-ul-li.png) no-repeat left 8px;}
+.neo-htsccontent ul li a {color: #666666}
+/*score*/
+.neo-score {text-align: left;background: url(/images/calendar/neo-score.png) repeat-y left top}
+.score-content {width: 290px;}
+.neo-score-top {background: url(/images/calendar/neo-score-top.png) no-repeat left top; padding-top: 8px;}
+.neo-score-bt {background: url(/images/calendar/neo-score-bt.png) no-repeat left bottom; padding: 0 10px 15px; font-family: Tahoma; font-size: 11px}
+.score-tabs {height: 31px; position: relative; width: 299px; font-family: Tahoma; font-weight: bold; text-transform:uppercase; color: #FFFFFF}
+.score-tabs a:hover {color: #004175}
+.score-rate,
+.score-rate-active,
+.score-live,
+.score-live-active {position: absolute; display: block; height: 31px; top: 0; left: 0;color: #FFFFFF;width: 117px; text-align: center; line-height: 26px}
+.score-rate-active,
+.score-live-active {color: #004175}
+.score-live,
+.score-live-active {width: 95px; left: 117px;}
+.score-rate-active, a.score-rate:hover {background: url(/images/calendar/score-rate.png) no-repeat left top; }
+.score-live-active, a.score-live:hover {background: url(/images/calendar/score-live.png) no-repeat left top; }
+a.xemchitiet {font-size: 10px; color: #0033cc; padding-right: 8px; background: url(/images/calendar/xemchitiet.png) no-repeat right 4px}
+a.xemchitiet:hover {color: #8BB900;background: url(/images/calendar/xemchitiet-hover.png) no-repeat right 4px}
+/*video clip*/
+.neo-video {text-align: left;background: url(/images/calendar/neo-video.png) repeat-y left top}
+.neo-video-top {background: url(/images/calendar/neo-video-top.png) no-repeat left top; padding-top: 8px;}
+.neo-video-top h3 {font-size: 17px; font-weight: bold; text-transform:uppercase; color: #003866;padding: 2px 0 15px 14px}
+.neo-video-bt {background: url(/images/calendar/neo-video-bt.png) no-repeat left bottom; padding: 0 10px 15px; font-family: Tahoma; font-size: 11px}
+.video-headleft {float: left; width: 82px; margin-right: 5px; overflow: hidden}
+.video-headleft img {padding: 0; background: none; border: none;}
+.neo-video-bt ul {width: 200px; float: left; font-family: Tahoma; font-size: 11px}
+.neo-video-bt ul li a {color: #666666}
+.neo-video-bt ul li {padding: 2px 0 2px 23px; background: url(/images/calendar/video-li.png) no-repeat 11px 5px}
+.neo-video-bt ul li.video-head {font-weight: bold; padding-left: 29px; background: url(/images/calendar/tt-cliphead.png) no-repeat left top}
+.neo-video-bt ul li.video-head a {color: #004175}
+/*hack for detail, cat view*/
+#neo-maincontainer.neo-trangcon, #neo-maincontainer.neo-trangchitiet
+ {border: none; padding-top: 9px;}
+.neo-trangcon #inset-col,
+.neo-trangchitiet #inset-col {background: url(/images/calendar/inset-colneo-bg2.png) #F3F3F3 no-repeat left top}
+.neo-trangchitiet {padding-top: 9px;}
+.neo-trangchitiet .rc-content, .neo-trangcon .rc-content {padding-top: 0}
+.neo-trangchitiet .cat-trangsau { padding:3px 10px 10px 3px;}
+.neo-trangchitiet .xembaitheongaythang {float: left}
+.neo-trangchitiet .neo-otherarticles {margin-top: 14px}
+/*detail*/
+.detailview {padding-right: 2px; font-size: 14px; font-family: "Times New Roman", Times, serif; color: #333333}
+.detailview h3 {font-weight: bold; font-size: 19px; color: #004175; padding-top: 4px}
+.neo-dtdate {font-size: 11px; color: #999999; background: url(/images/calendar/neo-dtdate.png) no-repeat right bottom; text-align: right; padding: 2px 4px 1px; font-family: Arial, Helvetica, sans-serif}
+.introtext {color: #666666; font-weight: bold}
+ul.dt-relatednews {padding: 6px}
+ul.dt-relatednews li {background: url(/images/calendar/dt-relatednews-li.png) no-repeat left 9px; padding: 2px 0 1px 11px}
+ul.dt-relatednews li a {color: #666666}
+ul.dt-relatednews li a:hover {color: #6495ed}
+.neo-dtcontent p {padding: 6px 6px 6px 0}
+.neo-dtcontent h4 {font-size: 16px; font-weight: bold; padding: 5px 0}
+.neo-dtimg, p.neo-dtimg {padding: 6px 0 0 10px;}
+.dt-caption, p.dt-caption {padding-left: 10px;font-size: 11px; color: #666666; font-family: Tahoma; line-height: 14px;}
+.dt-author {font-family: Tahoma; text-align: right; padding: 6px 10px 6px 0; font-size: 11px; color: #333333; font-weight: bold}
+.neo-emailprintback { background: url(/images/calendar/neo-emailprintback.png) no-repeat right top; height: 28px; line-height: 28px; text-align:right}
+.neo-emailprintback a {color: #999999;margin-right: 15px;}
+.neo-emailprintback a:hover {color: #6495ed}
+.dt-email {background: url(/images/calendar/neo-email.png) no-repeat center left; padding: 0 0 0 22px; }
+.dt-print {background: url(/images/calendar/neo-print.png) no-repeat center left; padding: 0 0 0 19px; }
+.dt-respond {background: url(/images/calendar/neo-respond.png) no-repeat center left; padding: 0 0 0 20px; }
+.cactinkhac a {color: #ff0000; font-size: 11px; font-family: Tahoma; padding-right: 11px; background: url(/images/calendar/neo-cactinkhac.png) no-repeat right center; float: right; width: 140px; text-align:right}
+/*relatedcontent*/
+.neo-relatedarticles {margin-top: 11px;font-family: Arial, Helvetica, sans-serif; font-size: 12px; background:url(/images/calendar/neo-relatedarticles.png) repeat-x left top}
+.neo-relatedarticles h3 {font-weight: bold; font-size: 15px; color: #000000; line-height: 25px;letter-spacing: -1px; padding-top: 2px}
+.neo-relatedarticles ul {padding: 8px;}
+.neo-relatedarticles ul li {line-height: 16px; background: url(/images/calendar/neo-relatedarticles-ul-li.png) no-repeat left 7px; padding: 1px 0 1px 10px}
+.neo-relatedarticles ul li.new a {padding-right: 36px; background: url(/images/calendar/new.png) no-repeat right top}
+.detailview .neo-otherarticles h3 {font-size: 15px;}
+/*sport headline*/
+.sport-headline {background: url(/images/calendar/sport-headline.png) repeat-y left top; padding-bottom: 8px; border-bottom: 1px solid #dbdbdb}
+.sport-headline .hl-latestnews3 {width: 280px; padding: 0}
+.sport-headline .hl-latestnews3 img {background: #cccccc}
+.sport-headline .hl-otherarticles3 {width: 183px; padding: 0; background: url(/images/calendar/sporthl-otherarticles3.png) repeat-x left top}
+.sport-headline .hl-otherarticles3 h3 {padding: 4px 0 6px 14px;background:transparent url(/images/calendar/hl-otherarticles3h3.png) no-repeat scroll 5px 6px;}
+.sport-headline .hl-otherarticles3 ul li {background: url(/images/calendar/sporthl-otherarticles3li.png) no-repeat left 13px;padding:7px 2px 3px 12px; border-bottom: 1px solid #d3d3d3}
+.sport-headline .hl-otherarticles3 ul li.last {border: none}
+.sport-headline .hl-otherarticles3 ul li a {color: #333333}
+.sport-headline .hl-otherarticles3 ul li a:hover {color: #004175; text-decoration: none}
+.sport-left {width: 98px; float: left}
+.sport-right {width: 62px; float:  right}
+.sport-right img {padding: 1px; background: #FFFFFF; border: 1px solid #cccccc}
+/*Clear fix*/
+.clearfix:after {
+	clear: both;
+	display: block;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+* html > body .clearfix {
+	width: 100%;
+	display: block;
+}
+* html .clearfix {
+	height: 1%;
+}
+/* Firefox Scrollbar Hack - Do not remove */
+html {
+	margin-bottom: 1px;
+	height: 100%!important;
+	height: auto;
+}
+.neo-clear {
+	clear: both;
+	height: 0px;
+}
+.neo-clear-right {
+	clear: right;
+	height: 0px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.bodyContent{color: #000000;font-family: "Times New Roman";font-size: 12pt}
+.bodyContent p { color: #000; font-size: 12pt; font-family: "Times New Roman"}
+.bodyContent p o:p { display:none;}
+.bodyContent A:link { color: #00344f; font-size: 12pt; font-family: "Times New Roman"; text-decoration: none}
+.bodyContent A:visited { color: #0F53BF; font-size: 12pt; font-family: "Times New Roman"; text-decoration: none}
+.bodyContent A:active { color: #0F53BF; font-size: 12pt; font-family: "Times New Roman"; text-decoration: none}
+.bodyContent A:hover { color:red; font-size: 12pt; font-family: "Times New Roman"; text-decoration: none}
+.neo-dtcontent p.MsoNormal {padding: 0px 6px 0px 0px;}
+.introtext {color:#5F5F5F;font-family:"Times New Roman";font-size:11pt;text-align:justify;}
+#score-header{padding-bottom: 10px; padding-top: 10px; text-align: center}
+#score-header #inner{overflow: hidden; float: left; width: 290px; background-color: #005193;color: #FFF; text-transform: uppercase; border: solid 1px #CCC; font-weight: 700}
+#score-header #time{overflow: hidden; float: left; width: 60px; height: 57px; border-right: solid 1px #CCC;vertical-align: middle}
+#score-header #match{overflow: hidden; float: left; width: 108px; height: 57px; border-right: solid 1px #CCC;vertical-align: middle}
+#score-header #rate{overflow: hidden; float: left; width: 120px; height: 57px; vertical-align: middle}
+#rate #euro{overflow: hidden; float: left; width: 120px; height: 28px; border-bottom: solid 1px #CCC}
+#rate #under{overflow: hidden; float: left; width: 120px; height: 28px}
+#under .col1{overflow: hidden; float: left; width: 34px; border-right: solid 1px #CCC;height: 28px}
+#under .col3{overflow: hidden; float: left; width: 44px; height: 28px}
+.neo-score-bt #space{height: 10px; overflow: hidden; float: left; border-left: solid 1px #CCC;border-bottom: solid 1px #CCC; border-right: solid 1px #CCC}
+.score-col1{overflow: hidden; float: left; width: 60px; border-right: solid 1px #CCC;vertical-align: middle;height:45px}
+.score-col2{overflow: hidden; float: left; width: 108px; border-right: solid 1px #CCC;vertical-align: middle;height:45px}
+.score-col3{overflow: hidden; float: left; width: 120px; vertical-align: middle;height:45px}
+.h10p{height:10px}
+.score-col3 .score1{overflow: hidden; float: left; width: 34px; border-right: solid 1px #CCC;height:45px}
+.score-col3 .score2{overflow: hidden; float: left; width: 44px;height:45px}
+.neo-score-bt .content{width:290px;overflow:hidden;float:left;background-color:#d8f0fc;border-left:solid 1px #CCC;border-bottom:solid 1px #CCC;border-right:solid 1px #CCC;height:45px;text-align:center;vertical-align:middle;line-height:150%}
+.neo-score-bt .content-alternate{width:290px;overflow:hidden;float:left;border-left:solid 1px #CCC;border-bottom:solid 1px #CCC;border-right:solid 1px #CCC;height:45px;text-align:center;vertical-align:middle;line-height:150%}
+.content .pt5{padding-top:5px}
+/*news list no image*/
+.chl-img {width: 138px; float: left}
+.chl-info-no-image {width: 465px; float: left}
+.chl-info {width: 325px; float: left}
+.chl-info h4, .chl-info-no-image h4{font-size: 14px; padding-bottom: 4px; font-weight: bold; font-family: "Times New Roman", Times, serif}
+.chl-info h4 span, .chl-info-no-image h4 span {display: block; color: #ff0000;font-size: 12px}
+.chl-info a.readmore, .chl-info-no-image a.readmore {display: block; text-align: right}
+/* for advertising */
+#div_adv_topbanner_980x90{float:left;width:980px;height:90px}
+#div_adv_topbanner_1_expand_468x180{float:left;width:468px;height:180px}
+#div_adv_topbanner_2_expand_468x180{float:right;width:468px;height:180px}
+#div_adv_topbanner_expand_980x180{float:left;width:980px;height:180px}
+#div_adv_top_banner_1_468x90, #div_adv_top_banner_2_468x90 {width: 468px; height: 90px}
+#div_adv_top_banner_1_468x90 {float: left}
+#div_adv_top_banner_2_468x90 {float: right}
+/*spotlight ads*/
+.spl-ads {padding: 5px 0;}
+.spl-ads img {padding: 1px; border: 1px solid #cccccc}
+#div_adv_centerbanner_1_468x60 {width: 468px; float: left;height:60px}
+#div_adv_centerbanner_2_468x60 {width: 468px; float: right;height:60px}
+/*hot banner*/
+#div_adv_hotbanner_2a_336x280{float:left;width:336px;height:280px}
+.div_adv_hotbanner_336x140{float:left;width:336;height:140px}
+#hotbanner_outter{padding-bottom:0px}
+#hotbanner_outter div{padding-bottom:5px}
+/*AdvadvDivRandom*/
+.hiddenDiv {display:none; height:0px;width:0px;}
+.mgb {padding-bottom:10px; width:280px;}
+.showDiv {float:left;width:100%;}
+.showDivOpenAndClose {float:left;width:100px;position:absolute;top:-100px;left:-100px;color:White;z-index:100}
+.showDivOpenAndClose a {color:White}
+.outter_adv{background: #FFFFFF none repeat scroll 0; border: 1px solid #DADADA;width:336px;padding:3px 3px 3px 3px!important}
+#neo-splads {width: 360px;float: right;background: url(/images/calendar/neo-splads.png) #f3f3f3 repeat-y left top;  }
+.neo-spladscontent {background: url(/images/calendar/qcaoboiadmicro.png) no-repeat left bottom;padding: 5px 0 5px 10px;width:345px}
+.neo-spladscontent div {padding-bottom: 10px}
+.thumb_control {border:solid 1px #d1d1d1; margin:1px; padding: 2px 2px 2px 2px;}
+.w_180 {width:182px; border:solid 1px #d1d1d1;padding: 1px 0px 1px 0px; background-color:White;}
+/*#div7Zone {width:285px;text-align:center; padding-left:12px;}
+#div7Zone div {float:left;width:125px;height:125px;padding: 4px 4px 4px 8px;}*/
+#div7Zone {width:305px;text-align:center; align:center;margin:0 auto; padding-left:3px;}
+#div7Zone div {float:left;padding: 4px 11px 4px 11px;}	
+#div7Zone div div {border:1px solid #cccccc;float:left;padding:1px 1px 1px 1px; background-color:#ffffff; text-align:center;margin: 0px 0px 0px 0px;}	
+#divZone13 {width:180px;}
+#divZone13  div {padding-bottom:15px;height:600px;}
+#divZone13  div div {height:600px;width:180px;background-color:#ffffff;border:1px solid #cccccc; padding: 2px 2px 2px 2px;float:left}
+.f_l {float:left;}
+.tieu_diem {padding:10px 5px 5px; color:#004175; font-family:Arial; font-size:13px; font-weight:bold; text-transform:uppercase;background: url(/images/calendar/neo-tieudiemh3.png) repeat-x left top}
+.qc-rc-content div {}
+.qc-rc-content div img {}
+.dantri-div-border {border: 1px solid #ccc; width:180px; padding-top:5px;padding-bottom:5px}
+.dantri-div-bottom {padding:2px 0px 0px 0px;}
+.dantri-div-top {padding-top:9px}
+.Menu1280{margin:0 auto;text-align:left;width: 100%;min-width: 980px}
+/*tieu diem 23/12*/
+.focus_content {background: url(/images/calendar/neo-tdct-bt.png) no-repeat left bottom; padding: 0 0px 0px 5px;width:300px}
+.neo-tieudiem .content {background: url(/images/calendar/neo-tdcontent.png) repeat-y left top}
+.neo-tdct-top {background: url(/images/calendar/neo-tdct-top.png) no-repeat left top; padding-top: 15px;}
+.focus_content_odd {padding: 5px;width:135px}
+.focus_content_even {padding: 5px; background: #f2f8ff;width:135px}
+.neo-tdct-img {width: 50px; float: left; margin-right: 7px}
+.neo-tdct-info {width: 72px; float: left; margin:0px; padding-left:4px;}
+.neo-tdct-info-noimg {width: 100%; float: left}
+/*#focus_bg{background: url(/images/calendar/focus_content_bg.jpg) repeat-y left top}*/
+.neo-tieudiem .border_right{border-right:1px solid #DBDBDB}
+.neo-tieudiem .border_right_hidden{display:none;}
+.detailSubtitle {color:#004175; font-family:tahoma,Helvetica,Geneva,Swiss,SunSans-Regular;font-size:10pt;font-weight:bold;padding:2px 5px 2px 2px;text-decoration:underline;}
+.listSubtitle a {color:#336A96;font-family:Tahoma,Arial,Georgia,Times;font-size:8pt;left:2px;padding-bottom:3px;position:relative;text-decoration:underline;}
+div .todaydate{padding-right:3px;color:#989898;font-size:11px;padding:2px 3px 2px 0px}
+.ImagesNote {color:#000000;font-family:"Verdana";font-size:8pt;text-align:justify;font-weight:normal;padding-top:5px;}
+.theodongsukien {background-color:#f9f9f9;border-top:1px dotted #666666;padding:0px;}
+.theodongsukien1 {margin-top: 26px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+.theodongsukien1 h3 {font-weight: bold; font-size: 13px; color: #004175; padding: 0px 0 2px 2px;}
+.theodongsukien1 ul {padding: 8px;}
+.theodongsukien1 ul li {line-height: 16px; background: url(/images/calendar/neo-otherarticles-ul-li.png) no-repeat left 7px; padding: 1px 0 1px 10px}
+/*Box video*/
+.video_header {height:25px; border-bottom:2px solid #FF6600; width:290px;text-transform:uppercase; padding-left:10px; font-family:Arial; font-size:16px; font-weight:bold; color:#003866; text-align:left; padding-top:8px;}
+.video_player {width: 280px; float: left; padding:10px; overflow:hidden;}
+.video_link {width: 300px; float: left;}
+.video_link ul {width: 280px; float: left; padding-left:10px;}
+.video_link ul li {padding: 5px 5px 0px 15px; background: transparent url(/images/calendar/muitenvang.gif) no-repeat scroll left 9px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; text-align: left;}
+.video_active {font-family: Arial,Helvetica,sans-serif; font-size:12px; color:#FF9C00; font-weight:bold;}
+.video_link ul li  {font-family: Arial,Helvetica,sans-serif; font-size:12px; color:#004175; font-weight:normal;}
+.boxvideo {float: left; width: 300px; margin-bottom:10px;border:1px solid #CCCCCC;  padding-bottom:10px;}/*------------------------------------------------------------------------
+# DanTri - November 2008
+# ------------------------------------------------------------------------
+# Author: hoainam12k
+# Websites:  http://www.vannyneo.com -  Email: hoainam12k@gmail.com
+-------------------------------------------------------------------------*/
+
+#nav {position: absolute; width: 100%; height: 27px;background: transparent url(/images/calendar/menu.png) repeat-x scroll left top}
+#subnav {position: absolute; left: 0; height: 29px; background: url(/images/calendar/nc-tinnoibat.png) repeat-x left top; width: 100%}
+
+a.nav-home {background: url(/images/calendar/dantri-home.jpg) no-repeat left top; width: 32px; height: 27px; display: block; position: absolute; top: 0px; }
+.menu{padding:0 0 0 32px; height:27px; display:block; background: url(/images/calendar/menu.png) repeat-x left top; font-family: Tahoma; font-size: 11px}
+	.menu li{padding:0; margin:0; list-style:none; display:inline;text-align: center;}
+	.menu li a{float:left; padding: 0 0 0 8px;  height: 27px; line-height: 27px; display:block; color: #FFFFFF; text-decoration:none;cursor:pointer; background: url(/images/calendar/menu-li-a.png) no-repeat right bottom}
+	
+	.menu li a span {display: block;padding: 0 8px 0 0; }
+	.menu li.hover a {color:#FFFFFF;}
+	.menu li.hover a span {}
+	.menu li.active a, .menu li.hover a {color:#FFFFFF;}
+	.menu li.last a {background-position: 1000px 1000px}
+	
+	.menu li a:hover, .menu li.active a, .menu li.last a:hover {background: url(/images/calendar/menu-activeleft.png) no-repeat left top}
+	.menu li a:hover span, .menu li.last a:hover span, .menu li.active a span {background: url(/images/calendar/menu-activeright.png) no-repeat right top; color: #FFFFFF}
+
+/*for submenu by tuanva*/
+.under-top-menu{overflow:hidden;float:left;width:935px;height:27px}
+#submenu ul{}
+/*#submenu .ul-20 {padding-left: 28px}
+#submenu .ul-36 {padding-left: 135px}
+#submenu .ul-26 {padding-left: 187px}
+#submenu .ul-25 {padding-left: 245px}
+#submenu .ul-23 {padding-left: 302px}
+#submenu .ul-135 {padding-left: 346px}
+#submenu .ul-130 {padding-left: 427px}
+#submenu .ul-7 {padding-left: 525px}
+#submenu .ul-119 {padding-left: 588px}
+#submenu .ul-76 {padding-left: 465px}
+#submenu .ul-111 {padding-left: 725px}
+#submenu .ul-132 {padding-left: 780px}
+#submenu .ul-100 {padding-left: 860px}*/
+
+#submenu ul li {display: inline; }
+#submenu ul li.active {font-weight: bold}
+#submenu ul li a{display: block; float: left; line-height: 27px; padding: 0 12px;background: url(/images/calendar/submenu-li.png) no-repeat left center}
+#submenu ul li a.active {font-weight: bold}#calendarDiv{background-color:#FFF;border:1px solid #317082;font-family:arial;font-size:10px;padding:1px 1px 20px;position:absolute;visibility:hidden;width:250px;}
+#calendarDiv #monthSelect{width:100px;}
+#calendarDiv .activeDay{border:solid 1px #DBDBDB;color:red;font-weight:700;}
+#calendarDiv .monthYearActive{background-color:#317082;color:#E2EBED;}
+#calendarDiv .monthYearPicker{background-color:#E2EBED;border:1px solid #AAA;color:#317082;display:none;left:0;position:absolute;top:15px;z-index:1000;}
+#calendarDiv .monthYearPicker div{clear:both;cursor:pointer;float:none;margin:1px;padding:1px;font-family:Arial, "times new roman", Verdana, "Palatino linotype", Tahoma;font-size:9pt}
+#calendarDiv .selectBox{border:1px solid #E2EBED;color:#E2EBED;position:relative;}
+#calendarDiv .selectBox,#calendarDiv .selectBoxOver{cursor:pointer;font-family:Arial, "times new roman", Verdana, "Palatino linotype", Tahoma;font-size:9pt;line-height:12px;padding:1px 1px 1px 2px;}
+#calendarDiv .selectBoxOver{background-color:#317082;border:1px solid #FFF;color:#FFF;position:relative;}
+#calendarDiv .selectBoxTime{border:1px solid #317082;color:#317082;position:relative;}
+#calendarDiv .selectBoxTime,#calendarDiv .selectBoxTimeOver{cursor:pointer;line-height:12px;padding:1px 1px 1px 2px;}
+#calendarDiv .selectBoxTimeOver{border:1px solid #216072;color:#216072;position:relative;}
+#calendarDiv .timeBar{background-color:#E2EBED;color:#FFF;height:17px;line-height:17px;position:absolute;right:0;width:72px;}
+#calendarDiv .timeBar div,#calendarDiv .topBar div{float:left;margin-right:1px;}
+#calendarDiv .todaysDate{background-color:#f0f0f0;bottom:0;font-family:Arial, "times new roman", Verdana, "Palatino linotype", Tahoma;font-size:9pt;height:17px;line-height:17px;margin-top:3px;padding:0 2px 2px;position:absolute;text-align:center;width:247px;}
+#calendarDiv .topBar{background-color:#317082;height:16px;padding:2px;}
+#calendarDiv .topBar img{cursor:pointer;}
+#calendarDiv span,#calendarDiv img,#calendarDiv .todaysDate div{float:left;}
+#calendarDiv td{color:#006;cursor:pointer;font-family:Arial, "times new roman", Verdana, "Palatino linotype", Tahoma;font-size:9pt;margin:0;padding:3px;text-align:right;}
+.calendar_week_column{border-right:solid 1px #DBDBDB;}
+.calendar_week_row{padding-top:5px;}
+.calendar_week_row td{font-weight:700;}
+#calendarDiv .overday{cursor:text;color:#909090}.giaidau{float: left; width: 828px; border-left: solid 1px #CCC; border-right: solid 1px #CCC;border-bottom: solid 1px #CCC;padding-left: 5px;overflow: hidden; height: 35px;padding-top:10px;text-transform:uppercase;color:#193c58;font-weight:700;font-size:13px}
+.match{float: left; width: 828px; border-left: solid 1px #CCC; border-right: solid 1px #CCC;border-bottom: solid 1px #CCC;padding-left: 5px;overflow: hidden; height: 58px;background-color:#d8f0fc;color:#30414b;font-size:13px}
+.match-alt{float: left; width: 828px; border-left: solid 1px #CCC; border-right: solid 1px #CCC;border-bottom: solid 1px #CCC;padding-left: 5px;overflow: hidden; height: 58px;background-color:#eaf7fd;color:#30414b;font-size:13px}
+.flw45{float:left;width:45px}
+.flw55{float:left;width:55px}
+.r-border-1cc{border-right:solid 1px #CCC}
+.h60{height:60px}
+.match div, .match-alt div{border-right:solid 1px #CCC;padding-top:15px;text-align:center}
+.match .col1, .match-alt .col1{float:left;width:65px;height:58px;padding-top:10px !important}
+.match .col2, .match-alt .col2{float:left;width:175px;height:58px}
+.match .col45, .match-alt .col45{float:left;width:45px;height:58px}
+.match .col58, .match-alt .col58{float:left;width:58px;height:58px}
+#lichthidau{margin:0 auto;width: 879px;font-family:Arial,Helvetica,sans-serif}
+#lichthidau #content{float: left; width: 859px; padding: 5px 10px 5px 10px}
+#content #header{height: 49px }
+#header #left{float: left; width: 12px; height: 49px; background-image: url(/images/calendar/ltd_top_left.jpg);background-repeat: no-repeat}
+#header #center{float: left; width: 831px; background-image: url(/images/calendar/ltd_top_bg.jpg);background-repeat: repeat-x; height: 49px;text-align:center;font-size:16px;font-weight:bold;}
+#header #right{float: right; width: 16px; height: 49px; background-image: url(/images/calendar/lt_top_right.jpg);background-repeat: no-repeat}
+#content #bottom{height: 38px}
+#bottom #left{float: left; width: 12px; height: 38px; background-image: url(/images/calendar/lt_bottom_left.jpg);background-repeat: no-repeat}
+#bottom #center{float: left; width: 831px; background-image: url(/images/calendar/ltd_bottom_bg.jpg);background-repeat: repeat-x; height: 38px}
+#bottom #right{float: right; width: 16px; height: 38px; background-image: url(/images/calendar/ltd_bottom_right.jpg);background-repeat: no-repeat}
+#content #maincontent{padding-left:12px; background-image: url(/images/calendar/lt_content_bg.jpg); background-repeat: repeat-y;width: 859px; float: left}
+#maincontent #title{float: left; width: 828px; border: solid 1px #CCC; padding-left: 5px;overflow: hidden; height: 100px; background-color: #005193; color: #FFF; text-transform: uppercase;font-weight: 700;text-align:center;font-size:13px}
+#title #time{overflow: hidden; float: left; width: 65px; border-right: solid 1px #CCC;height: 100px}
+#title #tran{overflow: hidden; float: left; width: 175px; border-right: solid 1px #CCC;height: 100px}
+#title .group{overflow: hidden; float: left; width: 150px; border-right: solid 1px #CCC;height: 100px}
+#title #comment{overflow: hidden; float: left; width: 120px; height: 100px}
+.group .groupname{float: left; width: 150px; border-bottom: solid 1px #CCC; height: 40px}
+.group .groupcol{overflow: hidden; float: left; width: 150px; height: 60px}
+.group .lastcol{float: left; width: 150px; height: 60px}
+.pt25{padding-top:25px}
+.pt35{padding-top:35px}
+.pt10{padding-top:10px}/*.rc-content div{margin-bottom:0px}*/
+div{margin-bottom:0px}
+.dantri-neo-tdcontent-widget{font-family: Arial;font-size:12px; background-color:White; text-align:left}
+.dantri-neo-tdct-top-widget{padding-top: 2px;background-color:White}
+.dantri-neo-tdctodd{padding:5px; overflow:hidden}
+.dantri-neo-tdcteven{padding:5px;background-color:#f2f8ff; overflow:hidden}
+.dantri-neo-tdct-img{width:60px;float: left;margin-right:7px}
+.dantri-neo-tdct-info{width: 204px;float: left}
+.dantri-neo-tdct-img img{padding: 2px;border: 1px solid #cccccc}
+/*Clear fix*/
+.dantriclearfix:after {clear: both;display: block;content: ".";height: 0;visibility: hidden}
+* html > body .dantriclearfix {width: 100%;display: block}
+* html .dantriclearfix {height: 1%}
+/* Firefox Scrollbar Hack - Do not remove */
+html {margin-bottom: 1px;height: 100%!important;height: auto;}
+* {margin: 0; padding: 0;}
+ul {list-style: none} 
+.dantriwidget-link{text-decoration: none;outline: none;color: #004175;font-family: Arial;font-size:12px;text-align:left}
+.dantriwidget-link:hover{color: #6495ed;font-family: Arial;font-size:12px;text-align:left}
+.DanTri_Widget_NewsList{margin:0px;text-align:left}
+.DanTri_Widget_ListContainer{overflow-y:auto;margin-right:0px;text-align:left;}
+/*Cac box nhung cua dan tri*/
+.temp1_link{text-decoration:none;outline:none;color:#004175;font-family:Arial;font-size:13px;font-weight:bold;text-align:left}
+.temp1_link:hover{color: #004175;font-family:Arial;font-size:13px;text-align:left; font-weight:bold}
+.temp1_small_link{text-decoration:none;outline:none;color:#333;font-family:Arial;font-size:12px;text-align:left}
+.temp1_small_link:hover{color: #333;font-family:Arial;font-size:12px;text-align:left}
+.temp_hot_title_link{text-decoration:none;outline:none;color:#004175;font-family:Arial;font-size:12px;text-align:left;font-weight:bold}
+.temp_hot_title_link:hover{color: #004175;font-family:Arial;font-size:12px;text-align:left; font-weight:bold}
+/*.temp_div1{overflow:hidden; float:left; width:300px; border:solid 1px #ccc; background-color:White}
+.temp_div2{float:left; width:300px;height:4px; background-color:#98CB00; margin-top:1px}
+.temp_div3{float:left; width:300px}
+.temp_div4{width:280px; float:left; padding-left:10px}
+.temp_div5{padding-left:10px; width:280px; padding-top:7px}*/
+.temp_div1{overflow:hidden; float:left; width:143px; border:solid 1px #ccc; background-color:White}
+.temp_div2{float:left; width:143px;height:4px; background-color:#98CB00; margin-top:1px; overflow:hidden}
+.temp_div3{float:left; width:143px}
+.temp_div4{width:125px; float:left; padding-left:10px}
+.temp_div5{padding-left:10px; width:125px; padding-top:7px}
+.temp2_div2{float:left; width:143px;height:4px; background-color:#FE9900; margin-top:1px; overflow:hidden}
+.temp3_div1{overflow:hidden; float:left; width:298px; border:solid 1px #ccc; background-color:White}
+.temp3_div2{float:left; width:298px}
+.temp3_div3{width:280px; float:left; padding-left:10px}
+.temp3_div4{padding-left:10px; width:280px; padding-top:7px}
+.temp4_div1{overflow:hidden; float:left; width:300px;background-color:White}
+.temp4_div2{float:left; width:300px}
+.temp4_div3{float:left; width:251px;height:146px}
+.temp4_div4{float:left; width:49px;height:146px}
+.temp4_div5{float:left; width:251px;height:21px}
+.temp4_div6{float:left; width:49px;height:21px}
+.temp5_div1{overflow:hidden; float:left; width:298px; border:solid 1px #ccc; background-color:White}
+.temp5_div2{float:left; width:298px}
+.temp6_div1{overflow:hidden; float:left; width:298px; border:solid 1px #ccc; background-color:White}
+.temp6_div2{float:left; width:298px}
+.dantri-cat-morenews {}
+.dantri-cat-morenews a span {color: #ff0000;}
+.dantri-cat-morenews ul {padding-left:6px; padding:0px; margin:0px; list-style-type:none; margin-left:16px}
+.dantri-cat-morenews ul li {background:url(/images/calendar/dantri_template/chamvuong_2.gif) no-repeat left 6px; padding-left: 12px; margin-bottom:3px}
+.dantri-temp4-des {margin-top:5px}
+.dantri-temp4-des a span {color: #ff0000;}
+.dantri-temp4-des ul {padding-left: 6px; padding:0px; margin:0px}
+.dantri-temp4-des ul li {background:url(/images/calendar/dantri_template/sao_hoathi1.jpg) no-repeat left top; padding-left: 16px;}
+.p_t_3{padding-top:3px}
+.p_t_5{padding-top:5px}
+.p_t_8{padding-top:8px}
+.p_t_10{padding-top:10px}
+.h_10{height:10px; font-size:1px}
+.p_l_8{padding-left:8px}
+#score{width:276px;height:180px;padding:53px 17px 10px 17px;background:url(images/diemthi_box.gif) no-repeat top left;margin:0;}
+.scoreline{margin:0 0 5px 0;padding:0;}
+.bluetext{color:#004175;font-family:tahoma;font-weight:bold;font-size:11px;background:url(images/greybullet.gif) no-repeat 0 4px;margin:0;padding:0 0 0 10px;width:100px;display:block;float:left;}
+.dropstyle{width:150px;font-family:Arial, Helvetica, sans-serif;font-size:11px;height:19px;border:1px solid #c0c0c0;}
+.greytext{color:#999999;font-family:tahoma;font-weight:bold;font-size:11px;background:url(images/greybullet.gif) no-repeat 0 4px;margin:0;padding:0 0 0 10px;width:100px;display:block;float:left;}
+.searchinput{width:150px;font-family:Arial, Helvetica, sans-serif;font-size:11px;height:15px;border:1px solid #c0c0c0;}
+/*score*/
+.neo-score {text-align: left;background: url(/images/calendar/neo-score.png) repeat-y left top}
+.score-content {width: 290px;}
+.neo-score-top {background: url(/images/calendar/neo-score-top.png) no-repeat left top; padding-top: 8px}
+.neo-score-bt {background: url(/images/calendar/neo-score-bt.png) no-repeat left bottom; padding: 0px 0px 15px 9px; font-family: Tahoma; font-size: 11px}
+.score-tabs {height: 31px; position: relative; width: 299px; font-family: Tahoma; font-weight: bold; text-transform:uppercase; color: #FFFFFF}
+.score-tabs a:hover {color: #004175}
+.score-rate,
+.score-rate-active,
+.score-live,
+.score-live-active {position: absolute; display: block; height: 31px; top: 0; left: 0;color: #FFFFFF;width: 117px; text-align: center; line-height: 26px}
+.score-rate-active,
+.score-live-active {color: #004175}
+.score-live,
+.score-live-active {width: 95px; left: 117px;}
+.score-rate-active, a.score-rate:hover {background: url(/images/calendar//score-rate.png) no-repeat left top; }
+.score-live-active, a.score-live:hover {background: url(/images/calendar//score-live.png) no-repeat left top; }
+#score-header{padding-bottom: 0px;padding-top: 10px; text-align: center}
+#score-header #inner{overflow: hidden; float: left; width: 290px; background-color: #005193;color: #FFF; text-transform: uppercase; border: solid 1px #CCC; font-weight: 700}
+#score-header #time{overflow: hidden; float: left; width: 60px; height: 57px; border-right: solid 1px #CCC;vertical-align: middle}
+#score-header #match{overflow: hidden; float: left; width: 108px; height: 57px; border-right: solid 1px #CCC;vertical-align: middle}
+#score-header #rate{overflow: hidden; float: left; width: 120px; height: 57px; vertical-align: middle}
+#rate #euro{overflow: hidden; float: left; width: 120px; height: 28px; border-bottom: solid 1px #CCC}
+#rate #under{overflow: hidden; float: left; width: 120px; height: 28px}
+#under .col1{overflow: hidden; float: left; width: 34px; border-right: solid 1px #CCC;height: 28px}
+#under .col3{overflow: hidden; float: left; width: 44px; height: 28px}
+.neo-score-bt #space{height: 10px; overflow: hidden; float: left; border-left: solid 1px #CCC;border-bottom: solid 1px #CCC; border-right: solid 1px #CCC}
+.score-col1{overflow: hidden; float: left; width: 60px; border-right: solid 1px #CCC;vertical-align: middle;height:45px}
+.score-col2{overflow: hidden; float: left; width: 108px; border-right: solid 1px #CCC;vertical-align: middle;height:45px}
+.score-col3{overflow: hidden; float: left; width: 120px; vertical-align: middle;height:45px}
+.h10p{height:10px}
+.score-col3 .score1{overflow: hidden; float: left; width: 34px; border-right: solid 1px #CCC;height:45px}
+.score-col3 .score2{overflow: hidden; float: left; width: 44px;height:45px}
+.neo-score-bt .content{width:290px;overflow:hidden;float:left;background-color:#d8f0fc;border-left:solid 1px #CCC;border-bottom:solid 1px #CCC;border-right:solid 1px #CCC;height:45px;text-align:center;vertical-align:middle;line-height:150%}
+.neo-score-bt .content-alternate{width:290px;overflow:hidden;float:left;border-left:solid 1px #CCC;border-bottom:solid 1px #CCC;border-right:solid 1px #CCC;height:45px;text-align:center;vertical-align:middle;line-height:150%}
+.content .pt5{padding-top:5px}
+/*hau truong san co*/
+.neo-htsc {text-align: left}
+.neo-htsc h3 {font-weight: bold; font-size: 17px; color: #003866; text-transform:uppercase; padding: 9px 0 0 5px;background: url(/images/calendar/neo-tieudiemh3.png) repeat-x left top}
+.neo-htsccontent {overflow:hidden;background: url(/images/calendar/dantri_template/temp_thethao/neo-tdcontent.png) repeat-y left top}
+.neo-htsc-top {background: url(/images/calendar/dantri_template/temp_thethao/neo-tdct-top.png) no-repeat left top; padding-top: 12px;}
+.neo-htsc-bt {overflow:hidden;background: url(/images/calendar/dantri_template/temp_thethao/neo-tdct-bt.png) no-repeat left bottom; padding: 0 10px 15px; font-family: Tahoma; font-size: 11px}
+.neo-htsc-bt img {background: none; border: none; padding: 0}
+.htsc-title {font-weight: bold; padding: 9px 0 5px 9px}
+.htsc-title ul li {width:280px}
+.neo-htsccontent ul {margin-left: 9px; list-style-type:none}
+.neo-htsccontent ul li {float:left;padding: 2px 0 2px 12px; background: url(/images/calendar/dantri_template/temp_thethao/neo-htsccontent-ul-li.png) no-repeat left 8px;}
+.neo-htsccontent ul li a {color: #666666}
+/*video clip*/
+.dantri-video-clip-link{font-weight: bold; font-family: Arial; font-size: 11px; color: #004175;text-decoration: none}
+.dantri-video-clip-link:hover{font-weight: bold; font-family: Arial; font-size: 11px; color: #004175;text-decoration: none}
+.dantri-video-clip-title{font-family: Arial; font-size: 11px; color: #666666; text-decoration: none}
+.dantri-video-clip-title:hover{font-family: Arial; font-size: 11px; color: #666666; text-decoration: none}
+.neo-video {text-align: left;background: url(/images/calendar/dantri_template/temp_thethao/neo-video.png) repeat-y left top}
+.neo-video-top {background: url(/images/calendar/dantri_template/temp_thethao/neo-video-top.png) no-repeat left top; padding-top: 8px;}
+.neo-video-top h3 {font-size: 17px; font-weight: bold; text-transform:uppercase; color: #003866;padding: 2px 0 15px 14px}
+.neo-video-bt {background: url(/images/calendar/dantri_template/temp_thethao/neo-video-bt.png) no-repeat left bottom; padding: 0 10px 15px; font-family: Tahoma; font-size: 11px}
+.video-headleft {float: left; width: 82px; margin-right: 5px; overflow: hidden}
+.video-headleft img {padding: 0; background: none; border: none;}
+.neo-video-bt ul {width: 200px; float: left; font-family: Tahoma; font-size: 11px}
+.neo-video-bt ul li a {color: #666666}
+.neo-video-bt ul li {padding: 2px 0 2px 23px; background: url(/images/calendar/dantri_template/temp_thethao/video-li.png) no-repeat 11px 5px}
+.neo-video-bt ul li.video-head {font-weight: bold; padding-left: 29px; background: url(/images/calendar/dantri_template/temp_thethao/tt-cliphead.png) no-repeat left top}
+.neo-video-bt ul li.video-head a {color: #004175}
+.r-border-1cc{border-right:solid 1px #CCC}
+#lsspace{border-bottom:1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-right:1px solid #CCCCCC;float:left;height:10px;overflow:hidden;}
+#box_livescore .content{background-color:#D8F0FC;border-bottom:1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-right:1px solid #CCCCCC;float:left;height:40px;line-height:150%;overflow:hidden;text-align:center;vertical-align:middle;width:288px;}
+#box_livescore .content-alt{background-color:#FFF;border-bottom:1px solid #CCCCCC;border-left:1px solid #CCCCCC;border-right:1px solid #CCCCCC;float:left;height:40px;line-height:150%;overflow:hidden;text-align:center;vertical-align:middle;width:288px;}
+#box_livescore .content .col1, #box_livescore .content-alt .col1{float: left; width: 50px; height: 50px}
+#box_livescore .content .col2, #box_livescore .content-alt .col2{float: left; width: 55px; height: 50px}
+#box_livescore .content .col3, #box_livescore .content-alt .col3{float: left; width: 180px; height: 50px}
+.pt15{padding-top: 15px}
+#lsheader{overflow: hidden; float: left; width: 288px; border: solid 1px #CCC;height: 50px; background-color: #005193; color: #FFF; text-transform: uppercase;font-weight: 700; text-align: center}
+#lsheader #day{overflow: hidden; float: left; width: 50px; height: 50px}
+#lsheader #time{overflow: hidden; float: left; width: 55px; height: 50px}
+#lsheader #match{overflow: hidden; float: left; width: 180px; height: 50px}
+#box_livescore{width: 290px; overflow: hidden; font-family: Tahoma; font-size: 11px}
+#lsspace #col1{float: left; width: 50px; height: 10px}
+#lsspace #col2{float: left; width: 55px; height: 10px}
+#lsspace #col3{float: left; width: 180px; height: 10px}
+/*thong cao bao chi*/
+.thongcaobc {border: 1px solid #CCCCCC;overflow:hidden}
+.thongcaobc h3 {background: url(/images/calendar/dantri_template/thongcaobaochi/thongcaobc-h3.png) repeat-x left top; padding: 0px 0px 3px 11px; line-height: 33px;text-transform:uppercase; font-size: 16px; text-align: left}
+.tcbc-content {background: url(/images/calendar/dantri_template/thongcaobaochi/tcbc-content.png) repeat-x left bottom; margin:4px;margin-bottom:0px;padding:0px 6px 0px 7px; text-align: left; height:132px}
+.tcbc-content h4 {font-family: Tahoma; font-size: 11px; font-weight: bold}
+.tcbc-img {width:124px;float:left}
+.tcbc-img img{border:solid 1px #ccc; padding:1px}
+.tcbc-text {width:150px;float:left; font-family:Arial; font-size:12px}
+.tcbc-text-noimage {width:285px;float:left; font-family:Arial; font-size:12px}
+.tcbc-info {padding-top:6px}
+.thongcaobc_link{color:#00344F;text-decoration:none}
+.thongcaobc_link:hover{color:#004175;text-decoration:none}
+.widget-neo-tieudiem h3 {font-weight: bold; font-size: 17px; color: #003866; text-transform:uppercase; padding: 9px 0 0 5px;background: url(/images/calendar/neo-tieudiemh3.png) repeat-x left top; width:300px}
+/*box teen dep*/
+.box-teendep {width:298px; border: 1px solid #CCC; overflow:hidden; float:left}
+.box-teendep h3 {height: 38px; background: url(/images/calendar/dantri_template/teendep/boxteendeph3.png) no-repeat left top}
+.box-td-content {background: url(/images/calendar/dantri_template/teendep/boxteendepbg.png) repeat-x left bottom;padding: 8px 0 8px 8px;width:290px;float:left}
+.box-teendep img {padding: 4px; background: #cccccc; border:0px; float:left}
+.box-td-content h4 {padding-top:5px 0px 0px 0px}
+.box-td-content h4 a {color: #004175; font-size: 12px; font-weight: bold; font-family: Tahoma; text-decoration:none}
+.box-td-content ul li {background: url(/images/calendar/dantri_template/teendep/boxteendepli.png) no-repeat 2px 9px; padding: 5px 0px 2px 14px;overflow:hidden;float:left; width:280px}
+.box-td-content ul li a { color: #333; font-size: 12px;text-decoration:none}
+/*box nguoi tre*/
+.nguoitreclearfix:after {clear: both;display: block;content: ".";height: 0;visibility: hidden;}
+* html > body .nguoitreclearfix {width: 100%;display: block;}
+* html .nguoitreclearfix {height: 1%;}
+.box-nguoitre {width:298px; border: 1px solid #CCC;}
+.box-nguoitre h3 {height: 38px; background: url(/images/calendar/dantri_template/nguoitre/boxnguoitreh3.png) no-repeat left top}
+.box-nt-content {padding: 8px 0 8px 0; background: #FFF}
+.box-nt-content ul li h4 {padding: 3px 0 5px 0}
+.box-nt-content ul li h4 a {color: #004175; font-size: 11px; font-weight: bold; font-family: Tahoma; text-decoration: none}
+.box-nt-content ul li {background: url(/images/calendar/dantri_template/nguoitre/boxteendepli.png) no-repeat 10px 9px; padding: 2px 0 2px 22px;}
+.box-nt-content ul li a { color: #333; font-size: 11px;text-decoration:none;font-family:Arial}
+.box-nt-content ul li.nt-first {background: url(/images/calendar/dantri_template/nguoitre/boxnguoitre-fbg.png) repeat-y left bottom;padding: 0 0 11px 0;}
+.nt-fleft {float: left; width: 115px; margin-right: 1px}
+.nt-fright {float: left; width: 149px; padding: 5px 5px 7px 8px; background: #eaeaea}
+.nt-fright-noimage {float: left; width: 264px; padding: 5px 5px 7px 8px; background: #eaeaea}
+.nt-ftop {background:url(/images/calendar/dantri_template/nguoitre/nt-ftop.png) no-repeat left top; padding: 7px 0 0 11px}
+.nt-fright p {font-size: 11px; color: #333; font-family:Arial}
+.nt-fright-noimage p {font-size: 11px; color: #333; font-family:Arial}/*Sua menu cho Icon vao home */
+#nav {position: absolute; width: 100%; height: 27px;background: transparent url(/images/calendar/menu.png) repeat-x scroll left top} 
+#subnav {position: absolute; left: 0; height: 29px; background: url(/images/calendar/nc-tinnoibat.png) repeat-x left top; width: 100%}
+a.nav-home {background: url(/images/calendar/dantri-home.jpg) no-repeat left top; width: 32px; height: 27px; display: block; position: absolute; top: 0px; }
+.menu{width:988px; padding:0 0 0 2px; height:27px; display:block; background: url(/images/calendar/menu.png) repeat-x left top; font-family: Tahoma; font-size: 11px}
+.menu li{padding:0; margin:0; list-style:none; display:inline;text-align: center;}
+.menu li a{float:left; padding: 0 0 0 7px;  height: 27px; line-height: 27px; display:block; color: #FFFFFF; text-decoration:none;cursor:pointer; background: url(/images/calendar/menu-li-a.png) no-repeat right bottom}
+.menu li a span {display: block;padding: 0 7px 0 0; }
+.menu li.hover a {color:#FFFFFF;}  
+.menu li.hover a span {}
+.menu li.active a, .menu li.hover a {color:#FFFFFF;}
+.menu li.last a {background-position: 1000px 1000px}
+.menu li a:hover, .menu li.active a, .menu li.last a:hover {background: url(/images/calendar/menu-activeleft.png) no-repeat left top}
+.menu li a:hover span, .menu li.last a:hover span, .menu li.active a span {background: url(/images/calendar/menu-activeright.png) no-repeat right top; color: #FFFFFF}
+.under-top-menu{overflow:hidden;float:left;width:935px;height:27px}
+#submenu ul{}
+#submenu ul li {display: inline; }
+#submenu ul li.active {font-weight: bold}
+#submenu ul li a{display: block; float: left; line-height: 27px; padding: 0 12px;background: url(/images/calendar/submenu-li.png) no-repeat left center}
+#submenu ul li a.active {font-weight: bold}
+/* het sua menu cho Icon vao home */
+
+

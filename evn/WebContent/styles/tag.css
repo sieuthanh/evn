@@ -1,0 +1,45 @@
+
+
+
+
+.tdTree { DISPLAY: block;  BACKGROUND: White;  OVERFLOW: auto;  WIDTH: 200px; HEIGHT: 100%;}
+.tdmenu { DISPLAY: block;  BACKGROUND: White;  OVERFLOW: auto;  WIDTH: 200px; HEIGHT: 500px;}
+
+td.tabactive{
+    background:#507c9a url("../images/tabactivebg.gif") no-repeat left top;
+    border-right:1px solid #FFF;
+    padding:0px;
+}
+td.tabactive div{
+    background:url("../images/tabactiveR.gif") no-repeat right top;
+    padding:12px 7px 5px 7px;
+    cursor: pointer;
+}
+.tabactive div{
+    font-weight:bold;
+    color:#000000;
+    font-size: 12px;
+    font-family: Tahoma,Arial;
+    
+}
+
+td.tab{
+    background:#CCDAE3 url("../images/tabinactivetbg.gif") no-repeat left top;
+    border-right:1px solid #FFF;
+    border-top:3px solid #FFF;
+}
+td.tab div{
+    background:url("../images/tabinactiveR.gif") no-repeat right top;
+    padding:9px 7px 5px 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: Tahoma,Arial;
+}
+.td
+{
+	border-right: #b0bec7 1px solid;
+	border-top: #b0bec7 1px solid;
+	border-left: #b0bec7 1px solid;
+	border-bottom: #b0bec7 1px solid;
+}
+

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <global-forwards>
+    <forward name="_HOME" path="/"/>
+    <forward name="_LOGIN" path="/admin/login/"/>
+    <forward name="_ERROR" path="/error/"/>
+  </global-forwards>
+
+  <controller maxFileSize="20M" processorClass="org.apache.struts.action.RequestProcessor" contentType="text/html; charset=UTF-8" locale="true"/>
+  <message-resources parameter="com.res.Configs"/>
+  <message-resources parameter="com.res.Application_vn_VN" key="vn_VN"/>
+  <message-resources parameter="com.res.Application_en_US" key="en_US"/>
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
+</struts-config>

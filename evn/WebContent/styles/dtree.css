@@ -1,0 +1,38 @@
+.QTree { DISPLAY: block;  BACKGROUND: White;  OVERFLOW: auto;  WIDTH: 310px; HEIGHT: 450px;}
+dtree {
+ font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+ font-size: 11px;
+ color: #666;
+ white-space: nowrap;
+        margin: 0px;
+}
+.dtree img {
+ margin: 0px;
+ border: 0px;
+ vertical-align: middle;
+ 
+}
+.dtree a {
+ margin: 0px;
+ color: #333;
+ text-decoration: none;
+ 
+}
+.dtree a.node, .dtree a.nodeSel {
+ margin: 0px;
+ white-space: nowrap;
+ padding: 1px 2px 1px 2px;
+}
+.dtree a.node:hover, .dtree a.nodeSel:hover {
+ margin: 0px;
+ color: #333;
+ text-decoration: underline;
+}
+.dtree a.nodeSel {
+ margin: 0px;
+ background-color: #c0d2ec;
+}
+.dtree .clip {
+        margin: 0px;
+ overflow: hidden;
+}
